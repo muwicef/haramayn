@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:haramayn/core/constants/app_assets.dart';
 
+import '../../routes.dart';
+
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
 
@@ -11,6 +13,15 @@ class SplashPage extends StatelessWidget {
       const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.dark,
+      ),
+    );
+
+    Future.delayed(
+      const Duration(milliseconds: 1500),
+      () => Navigator.pushNamedAndRemoveUntil(
+        context,
+        Routes.welcomePage,
+        (_) => false,
       ),
     );
 
