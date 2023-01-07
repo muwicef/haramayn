@@ -54,10 +54,14 @@ class AppIcons extends AssetsFolder {
   String get time => '$basePath/time.svg';
 
   String get user => '$basePath/user.svg';
+
+  String get loading => '$basePath/loading.svg';
 }
 
 class AppImages extends AssetsFolder {
   AppImages() : super('assets/images');
 
   String get logo => '$basePath/logo.png';
+
+  String get welcomeBg => '$basePath/welcomeBg.png';
 }
