@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:haramayn/core/constants/app_colors.dart';
+import 'package:haramayn/presentation/routes.dart';
 
 import '../../../core/constants/app_assets.dart';
 import '../../../core/constants/app_text_styles.dart';
@@ -49,24 +50,27 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 222.82.h),
-            Container(
-              width: double.maxFinite,
-              padding: const EdgeInsets.symmetric(vertical: 14),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                gradient: LinearGradient(
-                  colors: [
-                    AppColors.primaryColor,
-                    const Color(0xFF307838),
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
+            InkWell(
+              onTap: () => Navigator.pushNamed(context, Routes.mainPage),
+              child: Container(
+                width: double.maxFinite,
+                padding: const EdgeInsets.symmetric(vertical: 14),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  gradient: LinearGradient(
+                    colors: [
+                      AppColors.primaryColor,
+                      const Color(0xFF307838),
+                    ],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
                 ),
-              ),
-              child: Text(
-                'Kirish',
-                style: AppTextStyles.headingStyle2,
-                textAlign: TextAlign.center,
+                child: Text(
+                  'Kirish',
+                  style: AppTextStyles.headingStyle2,
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
             SizedBox(height: 21.h),
