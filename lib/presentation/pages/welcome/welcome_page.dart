@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:haramayn/presentation/routes.dart';
 
 import '../../../core/constants/app_assets.dart';
 import '../../../core/constants/app_colors.dart';
@@ -15,7 +16,7 @@ class WelcomePage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 86.h),
+            SizedBox(height: 80.h),
             Image.asset(
               AppAssets.images.logo,
               width: 156.w,
@@ -52,7 +53,7 @@ class WelcomePage extends StatelessWidget {
                         ),
                         backgroundColor: MaterialStatePropertyAll(AppColors.secondaryColor),
                       ),
-                      onPressed: () {},
+                      onPressed: () => Navigator.pushNamed(context, Routes.loginPage),
                       child: Text(
                         'Ishga tushirish',
                         style: AppTextStyles.welcomeBtnStyle,

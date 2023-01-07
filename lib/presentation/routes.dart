@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:haramayn/presentation/pages/splash/splash_page.dart';
-import 'package:haramayn/presentation/pages/welcome/welcome_page.dart';
+
+import 'pages/login/login_page.dart';
+import 'pages/signup/signup_page.dart';
+import 'pages/splash/splash_page.dart';
+import 'pages/welcome/welcome_page.dart';
 
 class Routes {
   static const splashPage = '/';
-  static const welcomePage = '/welcome';
+  static const welcomePage = '/welcomePage';
+  static const loginPage = '/loginPage';
+  static const signupPage = '/signupPage';
 
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     try {
@@ -20,6 +25,16 @@ class Routes {
           return MaterialPageRoute(
             settings: routeSettings,
             builder: (_) => const WelcomePage(),
+          );
+        case loginPage:
+          return MaterialPageRoute(
+            settings: routeSettings,
+            builder: (_) => const LoginPage(),
+          );
+        case signupPage:
+          return MaterialPageRoute(
+            settings: routeSettings,
+            builder: (_) => const SignUpPage(),
           );
         default:
           return MaterialPageRoute(
