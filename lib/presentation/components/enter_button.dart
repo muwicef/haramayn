@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_text_styles.dart';
-import '../routes.dart';
 
 class EnterButton extends StatelessWidget {
   const EnterButton({
