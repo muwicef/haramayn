@@ -56,6 +56,12 @@ class AppIcons extends AssetsFolder {
   String get user => '$basePath/user.svg';
 
   String get loading => '$basePath/loading.svg';
+
+  String get language => '$basePath/language.svg';
+
+  String get arrowBottom => '$basePath/arrow-bottom.svg';
+
+  String get phone => "$basePath/phone.svg";
 }
 
 class AppImages extends AssetsFolder {

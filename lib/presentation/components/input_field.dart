@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../core/constants/app_colors.dart';
@@ -19,7 +18,7 @@ class InputField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: AppTextStyles.hintTextStyle,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
         border: OutlineInputBorder(
           borderSide: BorderSide(color: AppColors.inputBorderColor),
           borderRadius: BorderRadius.circular(12),
@@ -29,8 +28,8 @@ class InputField extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
         prefixIcon: Padding(
-          padding: const EdgeInsets.only(left: 14, right: 14),
-          child: SvgPicture.asset(iconPath, width: 14.w),
+          padding: const EdgeInsets.only(left: 16, right: 16),
+          child: SvgPicture.asset(iconPath),
         ),
       ),
     );

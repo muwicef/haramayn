@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:haramayn/core/constants/app_assets.dart';
 
 import '../../routes.dart';
@@ -30,7 +31,8 @@ class SplashPage extends StatelessWidget {
       body: Center(
         child: Center(
           child: Image.asset(
-            width: 156,
+            height: 119.5,
+            width: 174.w,
             AppAssets.images.logo,
           ),
         ),

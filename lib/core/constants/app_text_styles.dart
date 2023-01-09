@@ -3,7 +3,7 @@ import 'package:haramayn/core/constants/app_colors.dart';
 
 class AppTextStyles {
   static TextStyle welcomeStyle = TextStyle(
-    fontFamily: 'Poppins',
+    fontFamily: 'Montserrat',
     fontSize: 18.69,
     fontWeight: FontWeight.w400,
     color: AppColors.welcomeTextColor,
@@ -48,6 +48,20 @@ class AppTextStyles {
     fontFamily: 'OpenSans',
     fontSize: 14,
     fontWeight: FontWeight.w400,
+    color: Colors.black,
+  );
+
+  static TextStyle normalTextStyle2 = TextStyle(
+    fontFamily: 'OpenSans',
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textColor,
+  );
+
+  static TextStyle mediumTextStyle1 = const TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
     color: Colors.black,
   );
 }
