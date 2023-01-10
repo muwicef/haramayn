@@ -43,7 +43,7 @@ class AppIcons extends AssetsFolder {
 
   String get more => '$basePath/more.svg';
 
-  String get profileActive => '$basePath/profileActive.svg';
+  String get profileActive => '$basePath/profile-active.svg';
 
   String get profile => '$basePath/profile.svg';
 
@@ -62,6 +62,18 @@ class AppIcons extends AssetsFolder {
   String get arrowBottom => '$basePath/arrow-bottom.svg';
 
   String get phone => "$basePath/phone.svg";
+
+  String get time1 => "$basePath/time1.svg";
+
+  String get time2 => "$basePath/time2.svg";
+
+  String get time3 => "$basePath/time3.svg";
+
+  String get time4 => "$basePath/time4.svg";
+
+  String get time5 => "$basePath/time5.svg";
+
+  String get findCalendar => '$basePath/find-calendar.svg';
 }
 
 class AppImages extends AssetsFolder {

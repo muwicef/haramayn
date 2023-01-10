@@ -8,17 +8,34 @@ import '../home/home_page.dart';
 import '../pray-time/pray_time_page.dart';
 import '../profile/profile_page.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({super.key});
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  int selectedIndex = 0;
+  PageController pageController = PageController(initialPage: 0);
+  final List<String> appBarTitles = [
+    'Home',
+    'Books',
+    'Calendar',
+    'Namoz Vaqtlari',
+    'Shaxsiy Profil',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Haramayn Travel'),
+        title: Text(appBarTitles[selectedIndex]),
         centerTitle: true,
       ),
       body: PageView(
+        controller: pageController,
         children: const [
           HomePage(),
           BooksPage(),
@@ -31,6 +48,11 @@ class MainPage extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
+        currentIndex: selectedIndex,
+        onTap: (value) => setState(() {
+          selectedIndex = value;
+          pageController.jumpToPage(value);
+        }),
         items: [
           BottomNavigationBarItem(
             icon: SvgPicture.asset(AppAssets.icons.home),

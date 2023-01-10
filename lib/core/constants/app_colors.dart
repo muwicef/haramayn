@@ -14,4 +14,8 @@ class AppColors {
   static Color inputBorderColor = const Color(0xFFEEEEEE);
 
   static Color textColor = const Color(0xFF208B2B);
+
+  static Color textColor2 = const Color(0xFF3F3F3F);
+
+  static Color prayActiveColor = const Color(0xFF30C13F);
 }

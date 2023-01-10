@@ -64,4 +64,18 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
     color: Colors.black,
   );
+
+  static TextStyle mediumTextStyle2 = TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 15,
+    fontWeight: FontWeight.w500,
+    color: AppColors.welcomeTextColor,
+  );
+
+  static TextStyle prayTimeStyle = TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: AppColors.primaryColor,
+  );
 }
