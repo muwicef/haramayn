@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:haramayn/core/constants/app_text_styles.dart';
 
 import '../../../core/constants/app_assets.dart';
 import '../books/books_page.dart';
@@ -19,8 +20,8 @@ class _MainPageState extends State<MainPage> {
   int selectedIndex = 0;
   PageController pageController = PageController(initialPage: 0);
   final List<String> appBarTitles = [
-    'Home',
-    'Books',
+    'Haramayn Tour',
+    'Foydali',
     'Calendar',
     'Namoz Vaqtlari',
     'Shaxsiy Profil',
@@ -31,8 +32,13 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(appBarTitles[selectedIndex]),
+        title: Text(
+          appBarTitles[selectedIndex],
+          style: AppTextStyles.headingStyle1.copyWith(fontSize: 20),
+        ),
         centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.white,
         leading: const SizedBox(),
       ),
       body: PageView(
@@ -50,6 +56,8 @@ class _MainPageState extends State<MainPage> {
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
+        backgroundColor: Colors.white,
+        elevation: 0,
         currentIndex: selectedIndex,
         onTap: (value) => setState(() {
           selectedIndex = value;

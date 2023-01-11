@@ -20,4 +20,10 @@ class AppColors {
   static Color prayActiveColor = const Color(0xFF30C13F);
 
   static Color headingColor = const Color(0xFF240F4F);
+
+  static Color textColor3 = const Color(0xFF090909);
+
+  static Color arabicColor = const Color(0xFF050505);
+
+  static Color dividerColor = const Color(0xFF7B80AD);
 }

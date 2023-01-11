@@ -78,6 +78,20 @@ class AppTextStyles {
     color: AppColors.textColor,
   );
 
+  static TextStyle normalTextStyle3 = TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textColor3,
+  );
+
+  static TextStyle normalTextStyle4 = TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 18.3,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textColor,
+  );
+
   static TextStyle mediumTextStyle1 = const TextStyle(
     fontFamily: 'Montserrat',
     fontSize: 16,
@@ -104,5 +118,26 @@ class AppTextStyles {
     fontSize: 16,
     fontWeight: FontWeight.w700,
     color: Colors.white,
+  );
+
+  static TextStyle arabicStyle = TextStyle(
+    fontFamily: 'Arabic',
+    fontSize: 20.59,
+    fontWeight: FontWeight.w700,
+    color: AppColors.arabicColor,
+  );
+
+  static TextStyle guideStyle = TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 18.28,
+    fontWeight: FontWeight.w500,
+    color: AppColors.headingColor,
+  );
+
+  static TextStyle guideStyle2 = TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 13.71,
+    fontWeight: FontWeight.w500,
+    color: AppColors.welcomeTextColor,
   );
 }
