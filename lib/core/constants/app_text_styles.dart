@@ -30,6 +30,26 @@ class AppTextStyles {
     color: Colors.white,
   );
 
+  static TextStyle headingStyle3 = const TextStyle(
+    fontFamily: 'OpenSans',
+    fontSize: 13,
+    fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle headingStyle4 = const TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
+  );
+
+  static TextStyle headingStyle5 = const TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 19,
+    fontWeight: FontWeight.w700,
+    color: Colors.white,
+  );
+
   static TextStyle hintTextStyle = TextStyle(
     fontFamily: 'Montserrat',
     fontSize: 16,
@@ -77,5 +97,12 @@ class AppTextStyles {
     fontSize: 16,
     fontWeight: FontWeight.w600,
     color: AppColors.primaryColor,
+  );
+
+  static TextStyle sliderTextStyle = const TextStyle(
+    fontFamily: 'OpenSans',
+    fontSize: 16,
+    fontWeight: FontWeight.w700,
+    color: Colors.white,
   );
 }

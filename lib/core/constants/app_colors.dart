@@ -18,4 +18,6 @@ class AppColors {
   static Color textColor2 = const Color(0xFF3F3F3F);
 
   static Color prayActiveColor = const Color(0xFF30C13F);
+
+  static Color headingColor = const Color(0xFF240F4F);
 }

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:haramayn/presentation/routes.dart';
 
 import '../../../core/constants/app_assets.dart';
 import '../../../core/constants/app_text_styles.dart';
 import '../../components/enter_button.dart';
 import '../../components/input_field.dart';
+import '../../routes.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});

@@ -74,6 +74,12 @@ class AppIcons extends AssetsFolder {
   String get time5 => "$basePath/time5.svg";
 
   String get findCalendar => '$basePath/find-calendar.svg';
+
+  String get book => '$basePath/book.svg';
+
+  String get arrow2 => '$basePath/arrow-right-2.svg';
+
+  String get peoples => '$basePath/peoples.svg';
 }
 
 class AppImages extends AssetsFolder {
@@ -82,4 +88,6 @@ class AppImages extends AssetsFolder {
   String get logo => '$basePath/logo.png';
 
   String get welcomeBg => '$basePath/welcomeBg.png';
+
+  String get tourBg => '$basePath/tour-background.png';
 }

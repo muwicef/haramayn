@@ -33,9 +33,11 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         title: Text(appBarTitles[selectedIndex]),
         centerTitle: true,
+        leading: const SizedBox(),
       ),
       body: PageView(
         controller: pageController,
+        physics: const NeverScrollableScrollPhysics(),
         children: const [
           HomePage(),
           BooksPage(),
