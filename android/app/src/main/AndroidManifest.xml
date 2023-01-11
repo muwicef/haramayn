@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="uz.muwicef.haramayn">
    <application
-        android:label="haramayn"
+        android:label="Haramayn"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
