@@ -26,12 +26,12 @@ class GuideRow extends StatelessWidget {
             children: [
               Text(
                 'Yo\'riqnoma #$guideNum',
-                style: AppTextStyles.guideStyle,
+                style: AppTextStyles.popStyle18m,
               ),
               SizedBox(height: 4.96.h),
               Text(
                 '$fileCount fayl mavjud',
-                style: AppTextStyles.guideStyle2,
+                style: AppTextStyles.popStyle13m,
               ),
             ],
           ),

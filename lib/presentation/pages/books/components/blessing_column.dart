@@ -19,13 +19,13 @@ class BlessingColumn extends StatelessWidget {
           alignment: Alignment.centerRight,
           child: Text(
             title,
-            style: AppTextStyles.arabicStyle,
+            style: AppTextStyles.amirStyle20b,
           ),
         ),
         const SizedBox(height: 18.3),
         Text(
           titleMeaning,
-          style: AppTextStyles.normalTextStyle4,
+          style: AppTextStyles.montStyle18r,
         ),
         const SizedBox(height: 18.3),
         Divider(color: AppColors.dividerColor.withOpacity(0.35)),

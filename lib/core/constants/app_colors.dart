@@ -26,4 +26,6 @@ class AppColors {
   static Color arabicColor = const Color(0xFF050505);
 
   static Color dividerColor = const Color(0xFF7B80AD);
+
+  static Color textColor4 = const Color(0xFF2C2C2C);
 }

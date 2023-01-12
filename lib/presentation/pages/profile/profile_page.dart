@@ -27,12 +27,12 @@ class ProfilePage extends StatelessWidget {
                 children: [
                   Text(
                     'Islomjon Olimjonov',
-                    style: AppTextStyles.headingStyle3.copyWith(fontSize: 14),
+                    style: AppTextStyles.openStyle14b.copyWith(fontSize: 14),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     '+998 93 990-90-90',
-                    style: AppTextStyles.normalTextStyle1,
+                    style: AppTextStyles.openStyle14r,
                   ),
                 ],
               ),
@@ -43,12 +43,12 @@ class ProfilePage extends StatelessWidget {
           SizedBox(height: 13.h),
           Text(
             'Balas: 1500\$',
-            style: AppTextStyles.headingStyle3.copyWith(fontSize: 16),
+            style: AppTextStyles.openStyle16b,
           ),
           SizedBox(height: 17.h),
           Text(
             'Ma\'lumotlar',
-            style: AppTextStyles.headingStyle6,
+            style: AppTextStyles.openStyle12b,
           ),
           SizedBox(height: 4.h),
           Container(
@@ -69,7 +69,7 @@ class ProfilePage extends StatelessWidget {
                   children: [
                     Text(
                       'Ma\'lumotlar',
-                      style: AppTextStyles.sliderTextStyle,
+                      style: AppTextStyles.openStyle16b,
                     ),
                     const Spacer(),
                     Container(
@@ -82,7 +82,7 @@ class ProfilePage extends StatelessWidget {
                         children: [
                           Text(
                             'Qisqa',
-                            style: AppTextStyles.forgotpswdStyle,
+                            style: AppTextStyles.openStyle12s,
                           ),
                           SizedBox(width: 16.w),
                           SvgPicture.asset(AppAssets.icons.arrowTop),
@@ -94,22 +94,22 @@ class ProfilePage extends StatelessWidget {
                 SizedBox(height: 10.h),
                 Text(
                   'Filial: Andijon',
-                  style: AppTextStyles.normalTextStyle2.copyWith(color: Colors.white),
+                  style: AppTextStyles.openStyle14s,
                 ),
                 SizedBox(height: 6.h),
                 Text(
                   'Rasmiylashtiruvchi agent: Islomjon Qodirov',
-                  style: AppTextStyles.normalTextStyle2.copyWith(color: Colors.white),
+                  style: AppTextStyles.openStyle14s,
                 ),
                 SizedBox(height: 6.h),
                 Text(
                   'Summa: \$1500',
-                  style: AppTextStyles.normalTextStyle2.copyWith(color: Colors.white),
+                  style: AppTextStyles.openStyle14s,
                 ),
                 SizedBox(height: 6.h),
                 Text(
                   'Ellik boshi: Qodir Islomjonov',
-                  style: AppTextStyles.normalTextStyle2.copyWith(color: Colors.white),
+                  style: AppTextStyles.openStyle14s,
                 ),
                 SizedBox(height: 22.h),
               ],

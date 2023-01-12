@@ -22,10 +22,7 @@ class PrayTimesPage extends StatelessWidget {
             children: [
               Text(
                 'Namoz vaqtlari',
-                style: AppTextStyles.headingStyle1.copyWith(
-                  fontSize: 16.83,
-                  decoration: TextDecoration.underline,
-                ),
+                style: AppTextStyles.montStyle16b,
               ),
               const Spacer(),
               Column(
@@ -37,7 +34,7 @@ class PrayTimesPage extends StatelessWidget {
                       SizedBox(width: 10.w),
                       Text(
                         'Farg\'ona',
-                        style: AppTextStyles.forgotpswdStyle.copyWith(color: AppColors.textColor2),
+                        style: AppTextStyles.openStyle12s,
                       ),
                     ],
                   ),
@@ -47,7 +44,7 @@ class PrayTimesPage extends StatelessWidget {
                       SizedBox(width: 10.w),
                       Text(
                         '6 - dekabar 2023',
-                        style: AppTextStyles.forgotpswdStyle.copyWith(color: AppColors.textColor2),
+                        style: AppTextStyles.openStyle12s,
                       ),
                     ],
                   )
@@ -98,7 +95,7 @@ class PrayTimesPage extends StatelessWidget {
                 const SizedBox(width: 10),
                 Text(
                   'Boshqa kungi namoz vaqtlari',
-                  style: AppTextStyles.normalTextStyle2,
+                  style: AppTextStyles.openStyle14s,
                 ),
                 const Spacer(),
                 SvgPicture.asset(

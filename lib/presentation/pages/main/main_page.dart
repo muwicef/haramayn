@@ -34,7 +34,7 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         title: Text(
           appBarTitles[selectedIndex],
-          style: AppTextStyles.headingStyle1.copyWith(fontSize: 20),
+          style: AppTextStyles.montStyle20b,
         ),
         centerTitle: true,
         elevation: 0,

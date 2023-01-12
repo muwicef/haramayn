@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:haramayn/presentation/routes.dart';
 
 import '../../../../core/constants/app_assets.dart';
 import '../../../../core/constants/app_text_styles.dart';
@@ -13,7 +14,7 @@ class DirectionContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(AppAssets.images.tourBg),
@@ -30,33 +31,44 @@ class DirectionContainer extends StatelessWidget {
               const SizedBox(width: 9.22),
               Text(
                 '14 yanvar',
-                style: AppTextStyles.headingStyle4,
+                style: AppTextStyles.montStyle14s,
               ),
               const Spacer(),
-              Container(
-                padding: const EdgeInsets.all(8),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
+              InkWell(
+                onTap: () => Navigator.pushNamed(context, Routes.infoDirectionPage),
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                  ),
+                  child: SvgPicture.asset(AppAssets.icons.arrow2),
                 ),
-                child: SvgPicture.asset(AppAssets.icons.arrow2),
               )
             ],
           ),
           SizedBox(height: 28.h),
           Text(
             'Toshkent - Madina',
-            style: AppTextStyles.headingStyle5,
+            style: AppTextStyles.montStyle19b,
           ),
           const SizedBox(height: 6),
           Row(
             children: [
               SvgPicture.asset(AppAssets.icons.peoples),
               const SizedBox(width: 6),
-              Text(
-                'bo\'sh o\'rinlar soni : 5',
-                style: AppTextStyles.normalTextStyle1.copyWith(color: Colors.white),
-              ),
+              RichText(
+                text: TextSpan(
+                  text: 'Bo\'sh o\'rinlar soni : ',
+                  style: AppTextStyles.openStyle14r,
+                  children: [
+                    TextSpan(
+                      text: '5',
+                      style: AppTextStyles.openStyle14b,
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
           const SizedBox(height: 16),

@@ -31,7 +31,7 @@ class SignUpPage extends StatelessWidget {
               SizedBox(height: 88.68.h),
               Text(
                 'Ro\'yxatdan o\'tish',
-                style: AppTextStyles.headingStyle1,
+                style: AppTextStyles.montStyle24b,
               ),
               SizedBox(height: 29.h),
               InputField(
@@ -59,13 +59,13 @@ class SignUpPage extends StatelessWidget {
                 children: [
                   Text(
                     'Akkountingiz mavjudmi? ',
-                    style: AppTextStyles.normalTextStyle1,
+                    style: AppTextStyles.openStyle14r,
                   ),
                   InkWell(
                     onTap: () => Navigator.pushNamed(context, Routes.loginPage),
                     child: Text(
                       'Tizimga kirish',
-                      style: AppTextStyles.normalTextStyle2,
+                      style: AppTextStyles.openStyle14s,
                     ),
                   ),
                 ],

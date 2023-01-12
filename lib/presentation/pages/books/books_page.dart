@@ -19,10 +19,10 @@ class BooksPage extends StatelessWidget {
             children: [
               Text(
                 'Zikrlar va duolar',
-                style: AppTextStyles.headingStyle1.copyWith(fontSize: 21.38),
+                style: AppTextStyles.montStyle21b,
               ),
               const Spacer(),
-              Text('yana', style: AppTextStyles.normalTextStyle3),
+              Text('yana', style: AppTextStyles.openStyle12r),
             ],
           ),
           SizedBox(height: 8.h),
@@ -45,10 +45,13 @@ class BooksPage extends StatelessWidget {
             children: [
               Text(
                 'Yo\'riqnomalar',
-                style: AppTextStyles.headingStyle1.copyWith(fontSize: 21.38),
+                style: AppTextStyles.montStyle21b,
               ),
               const Spacer(),
-              Text('yana', style: AppTextStyles.normalTextStyle3),
+              Text(
+                'yana',
+                style: AppTextStyles.openStyle12r,
+              ),
             ],
           ),
           SizedBox(height: 8.h),

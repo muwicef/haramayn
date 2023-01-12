@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:haramayn/presentation/pages/home/info_direction_page.dart';
 import 'package:haramayn/presentation/pages/main/main_page.dart';
 import 'package:haramayn/presentation/pages/select-lang/select_lang_page.dart';
 
@@ -14,6 +15,7 @@ class Routes {
   static const signupPage = '/signupPage';
   static const mainPage = '/mainPage';
   static const selectLangPage = '/selectLangPage';
+  static const infoDirectionPage = 'infoDirectionPage';
 
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     try {
@@ -49,6 +51,11 @@ class Routes {
           return MaterialPageRoute(
             settings: routeSettings,
             builder: (_) => const SelectLanguagePage(),
+          );
+        case infoDirectionPage:
+          return MaterialPageRoute(
+            settings: routeSettings,
+            builder: (_) => const InfoDirectionPage(),
           );
         default:
           return MaterialPageRoute(

@@ -45,7 +45,7 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
                 ),
                 Text(
                   'Matn turini tanlang',
-                  style: AppTextStyles.headingStyle1,
+                  style: AppTextStyles.montStyle24b,
                 ),
                 SizedBox(height: 18.82.h),
                 InkWell(
@@ -65,7 +65,7 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
                             RadioListTile(
                               title: Text(
                                 'Lotin alifbosi',
-                                style: AppTextStyles.mediumTextStyle1,
+                                style: AppTextStyles.montStyle16m,
                               ),
                               value: LanguageType.latin,
                               groupValue: languageType,
@@ -77,7 +77,7 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
                             RadioListTile(
                               title: Text(
                                 'Kirill alifbosi',
-                                style: AppTextStyles.mediumTextStyle1,
+                                style: AppTextStyles.montStyle16m,
                               ),
                               value: LanguageType.kirill,
                               groupValue: languageType,
@@ -103,7 +103,7 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
                         SvgPicture.asset(AppAssets.icons.language),
                         Text(
                           languages[languageType],
-                          style: AppTextStyles.mediumTextStyle1,
+                          style: AppTextStyles.montStyle16m,
                         ),
                         SvgPicture.asset(AppAssets.icons.arrowBottom),
                       ],

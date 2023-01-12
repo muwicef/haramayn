@@ -30,15 +30,15 @@ class HomePage extends StatelessWidget {
                   items: [
                     Text(
                       'Ramazon — hijriy yil hisobining toʻqqizinchi oyi. Islom dinida Ramazon oyida Alloh Muhammadga Qur’onni vahiy qilgan deb talqin etiladi. Shu sababli, Ramazon muqaddas oy hisoblanadi, bu oy davomida dindorlarga ro’za tutish buyuriladi.',
-                      style: AppTextStyles.sliderTextStyle,
+                      style: AppTextStyles.openStyle16s,
                     ),
                     Text(
                       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
-                      style: AppTextStyles.sliderTextStyle,
+                      style: AppTextStyles.openStyle16s,
                     ),
                     Text(
                       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
-                      style: AppTextStyles.sliderTextStyle,
+                      style: AppTextStyles.openStyle16s,
                     ),
                   ],
                   options: CarouselOptions(
@@ -65,7 +65,7 @@ class HomePage extends StatelessWidget {
           SizedBox(height: 24.h),
           Text(
             'Yo\'nalishlar',
-            style: AppTextStyles.headingStyle3,
+            style: AppTextStyles.openStyle13b,
           ),
           SizedBox(height: 15.h),
           const DirectionContainer(),

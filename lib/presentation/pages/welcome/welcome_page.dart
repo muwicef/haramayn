@@ -27,7 +27,7 @@ class WelcomePage extends StatelessWidget {
               SizedBox(height: 8.5.h),
               Text(
                 'Sizning yo\'l boshchingiz',
-                style: AppTextStyles.welcomeStyle,
+                style: AppTextStyles.montStyle18r,
               ),
               SizedBox(height: 52.15.h),
               SizedBox(

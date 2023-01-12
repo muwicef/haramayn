@@ -30,17 +30,17 @@ class PrayContainer extends StatelessWidget {
           SizedBox(width: 16.07.w),
           Text(
             title,
-            style: AppTextStyles.prayTimeStyle,
+            style: AppTextStyles.montStyle16s,
           ),
           const Spacer(),
           Text(
             time,
             style: isActive
-                ? AppTextStyles.mediumTextStyle2.copyWith(
+                ? AppTextStyles.montStyle15m.copyWith(
                     color: AppColors.primaryColor,
                     fontWeight: FontWeight.w700,
                   )
-                : AppTextStyles.mediumTextStyle2,
+                : AppTextStyles.montStyle15b,
           ),
         ],
       ),

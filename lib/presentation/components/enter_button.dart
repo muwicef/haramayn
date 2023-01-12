@@ -32,7 +32,7 @@ class EnterButton extends StatelessWidget {
         ),
         child: Text(
           title,
-          style: AppTextStyles.headingStyle2,
+          style: AppTextStyles.montStyle18s,
           textAlign: TextAlign.center,
         ),
       ),

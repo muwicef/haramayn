@@ -84,6 +84,16 @@ class AppIcons extends AssetsFolder {
   String get folder => '$basePath/folder.svg';
 
   String get arrowTop => '$basePath/arrow-top.svg';
+
+  String get logoWidth => '$basePath/logo-width.svg';
+
+  String get infoPlane => '$basePath/info-plane.svg';
+
+  String get infoPeoples => '$basePath/info-peoples.svg';
+
+  String get infoDate => '$basePath/info-date.svg';
+
+  String get infoPrice => '$basePath/info-price.svg';
 }
 
 class AppImages extends AssetsFolder {

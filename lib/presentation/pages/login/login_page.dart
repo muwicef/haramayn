@@ -31,7 +31,7 @@ class LoginPage extends StatelessWidget {
               SizedBox(height: 88.68.h),
               Text(
                 'Tizimga kirish',
-                style: AppTextStyles.headingStyle1,
+                style: AppTextStyles.montStyle24b,
               ),
               SizedBox(height: 29.h),
               InputField(
@@ -48,7 +48,7 @@ class LoginPage extends StatelessWidget {
                 alignment: Alignment.bottomRight,
                 child: Text(
                   'Parol esdan chiqdimi?',
-                  style: AppTextStyles.forgotpswdStyle,
+                  style: AppTextStyles.openStyle12s,
                 ),
               ),
               SizedBox(height: 222.82.h),
@@ -62,13 +62,13 @@ class LoginPage extends StatelessWidget {
                 children: [
                   Text(
                     'Akkount yo\'qmi? ',
-                    style: AppTextStyles.normalTextStyle1,
+                    style: AppTextStyles.openStyle14r,
                   ),
                   InkWell(
                     onTap: () => Navigator.pushNamed(context, Routes.signupPage),
                     child: Text(
                       'Yangi ro\'yxatdan o\'ting',
-                      style: AppTextStyles.normalTextStyle2,
+                      style: AppTextStyles.openStyle14s,
                     ),
                   ),
                 ],

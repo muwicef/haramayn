@@ -26,7 +26,7 @@ class WelcomeButton extends StatelessWidget {
       onPressed: () => Navigator.pushNamed(context, Routes.selectLangPage),
       child: Text(
         buttonTitle,
-        style: AppTextStyles.welcomeBtnStyle,
+        style: AppTextStyles.popStyle18s,
       ),
     );
   }

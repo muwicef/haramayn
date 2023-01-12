@@ -17,7 +17,7 @@ class InputField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: AppTextStyles.hintTextStyle,
+        hintStyle: AppTextStyles.montStyle16r,
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
         border: OutlineInputBorder(
           borderSide: BorderSide(color: AppColors.inputBorderColor),
