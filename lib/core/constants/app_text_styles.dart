@@ -50,6 +50,13 @@ class AppTextStyles {
     color: Colors.white,
   );
 
+  static TextStyle headingStyle6 = TextStyle(
+    fontFamily: 'OpenSans',
+    fontSize: 12,
+    fontWeight: FontWeight.w700,
+    color: AppColors.primaryColor,
+  );
+
   static TextStyle hintTextStyle = TextStyle(
     fontFamily: 'Montserrat',
     fontSize: 16,

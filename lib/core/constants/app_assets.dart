@@ -82,6 +82,8 @@ class AppIcons extends AssetsFolder {
   String get peoples => '$basePath/peoples.svg';
 
   String get folder => '$basePath/folder.svg';
+
+  String get arrowTop => '$basePath/arrow-top.svg';
 }
 
 class AppImages extends AssetsFolder {
@@ -94,4 +96,6 @@ class AppImages extends AssetsFolder {
   String get tourBg => '$basePath/tour-background.png';
 
   String get avatar => '$basePath/avatar.png';
+
+  String get informationBg => '$basePath/information-bg.png';
 }
