@@ -60,7 +60,7 @@ class DirectionContainer extends StatelessWidget {
               RichText(
                 text: TextSpan(
                   text: 'Bo\'sh o\'rinlar soni : ',
-                  style: AppTextStyles.openStyle14r,
+                  style: AppTextStyles.openStyle14r.copyWith(color: Colors.white),
                   children: [
                     TextSpan(
                       text: '5',
