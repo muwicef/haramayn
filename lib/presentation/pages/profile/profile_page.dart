@@ -27,7 +27,7 @@ class ProfilePage extends StatelessWidget {
                 children: [
                   Text(
                     'Islomjon Olimjonov',
-                    style: AppTextStyles.openStyle14b.copyWith(fontSize: 14),
+                    style: AppTextStyles.openStyle14b.copyWith(color: Colors.black),
                   ),
                   const SizedBox(height: 4),
                   Text(
@@ -41,9 +41,17 @@ class ProfilePage extends StatelessWidget {
             ],
           ),
           SizedBox(height: 13.h),
-          Text(
-            'Balas: 1500\$',
-            style: AppTextStyles.openStyle16b,
+          RichText(
+            text: TextSpan(
+              text: 'Balans: ',
+              style: AppTextStyles.openStyle16b.copyWith(color: Colors.black),
+              children: [
+                TextSpan(
+                  text: '1500\$',
+                  style: AppTextStyles.openStyle16r.copyWith(color: Colors.black),
+                ),
+              ],
+            ),
           ),
           SizedBox(height: 17.h),
           Text(
@@ -53,6 +61,7 @@ class ProfilePage extends StatelessWidget {
           SizedBox(height: 4.h),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+            width: double.maxFinite,
             decoration: BoxDecoration(
               color: AppColors.primaryColor,
               image: DecorationImage(
@@ -65,54 +74,101 @@ class ProfilePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: [
-                    Text(
-                      'Ma\'lumotlar',
-                      style: AppTextStyles.openStyle16b,
-                    ),
-                    const Spacer(),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(19),
-                      ),
-                      child: Row(
-                        children: [
-                          Text(
-                            'Qisqa',
-                            style: AppTextStyles.openStyle12s,
-                          ),
-                          SizedBox(width: 16.w),
-                          SvgPicture.asset(AppAssets.icons.arrowTop),
-                        ],
-                      ),
-                    )
-                  ],
+                Text(
+                  'Ma\'lumotlar',
+                  style: AppTextStyles.openStyle16b,
                 ),
                 SizedBox(height: 10.h),
                 Text(
                   'Filial: Andijon',
-                  style: AppTextStyles.openStyle14s,
+                  style: AppTextStyles.openStyle14s.copyWith(color: Colors.white),
                 ),
                 SizedBox(height: 6.h),
                 Text(
                   'Rasmiylashtiruvchi agent: Islomjon Qodirov',
-                  style: AppTextStyles.openStyle14s,
+                  style: AppTextStyles.openStyle14s.copyWith(color: Colors.white),
                 ),
                 SizedBox(height: 6.h),
                 Text(
                   'Summa: \$1500',
-                  style: AppTextStyles.openStyle14s,
+                  style: AppTextStyles.openStyle14s.copyWith(color: Colors.white),
                 ),
                 SizedBox(height: 6.h),
                 Text(
                   'Ellik boshi: Qodir Islomjonov',
-                  style: AppTextStyles.openStyle14s,
+                  style: AppTextStyles.openStyle14s.copyWith(color: Colors.white),
                 ),
                 SizedBox(height: 22.h),
               ],
+            ),
+          ),
+          SizedBox(height: 16.h),
+          Text(
+            'Hujjatlar',
+            style: AppTextStyles.openStyle12b,
+          ),
+          SizedBox(height: 4.h),
+          InkWell(
+            onTap: () {},
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+              width: double.maxFinite,
+              decoration: BoxDecoration(
+                color: AppColors.primaryColor,
+                image: DecorationImage(
+                  image: AssetImage(AppAssets.images.informationBg),
+                  fit: BoxFit.contain,
+                  alignment: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(19),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            'Hujjatlarni ko\'rish',
+                            style: AppTextStyles.openStyle16b,
+                          ),
+                          SizedBox(width: 8.w),
+                          SvgPicture.asset(
+                            AppAssets.icons.eye,
+                            color: Colors.white,
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 14.h),
+                      Row(
+                        children: [
+                          SvgPicture.asset(AppAssets.icons.visa),
+                          const SizedBox(width: 12.9),
+                          SvgPicture.asset(AppAssets.icons.document),
+                          const SizedBox(width: 12.9),
+                          Text(
+                            '(PDF)',
+                            style: AppTextStyles.openStyle16b,
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                  const Spacer(),
+                  Container(
+                    width: 32,
+                    height: 32,
+                    padding: const EdgeInsets.all(9),
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                    ),
+                    child: SvgPicture.asset(AppAssets.icons.arrowRight),
+                  )
+                ],
+              ),
             ),
           ),
         ],

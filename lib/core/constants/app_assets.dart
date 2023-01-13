@@ -96,6 +96,10 @@ class AppIcons extends AssetsFolder {
   String get infoPrice => '$basePath/info-price.svg';
 
   String get dialPhone => '$basePath/dial-phone.svg';
+
+  String get visa => '$basePath/visa.svg';
+
+  String get document => '$basePath/document.svg';
 }
 
 class AppImages extends AssetsFolder {
