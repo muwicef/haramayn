@@ -94,6 +94,8 @@ class AppIcons extends AssetsFolder {
   String get infoDate => '$basePath/info-date.svg';
 
   String get infoPrice => '$basePath/info-price.svg';
+
+  String get dialPhone => '$basePath/dial-phone.svg';
 }
 
 class AppImages extends AssetsFolder {
@@ -108,4 +110,6 @@ class AppImages extends AssetsFolder {
   String get avatar => '$basePath/avatar.png';
 
   String get informationBg => '$basePath/information-bg.png';
+
+  String get detailBg => '$basePath/detail_bg.png';
 }

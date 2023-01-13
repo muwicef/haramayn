@@ -28,4 +28,6 @@ class AppColors {
   static Color dividerColor = const Color(0xFF7B80AD);
 
   static Color textColor4 = const Color(0xFF2C2C2C);
+
+  static Color bgColor1 = const Color(0xFF01AB14);
 }

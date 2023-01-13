@@ -101,6 +101,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             leadingWidth: 0,
             pinned: true,
             elevation: 0,
+            stretch: false,
             title: TabBar(
               controller: tabController,
               labelStyle: AppTextStyles.montStyle14b,
@@ -118,11 +119,12 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         ];
       },
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 19),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: TabBarView(
           controller: tabController,
           children: [
-            Expanded(
+            SingleChildScrollView(
+              physics: const NeverScrollableScrollPhysics(),
               child: Column(
                 children: [
                   BookRow(

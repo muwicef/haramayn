@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:haramayn/core/constants/app_colors.dart';
 import 'package:haramayn/core/constants/app_text_styles.dart';
 
 import '../../../core/constants/app_assets.dart';
+import 'components/detail_info.dart';
+import 'components/include_text.dart';
 
 class InfoDirectionPage extends StatelessWidget {
   const InfoDirectionPage({super.key});
@@ -29,40 +33,161 @@ class InfoDirectionPage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           children: [
+            SizedBox(height: 40.h),
             Text(
               'Toshkent-Madina',
               style: AppTextStyles.openStyle28b,
             ),
             const SizedBox(height: 10),
+            DetailInfo(
+              svgImage: AppAssets.icons.infoPlane,
+              title: ' Jo\'nab ketadigan sana: ',
+              detail: '14 yanvar',
+            ),
+            DetailInfo(
+              svgImage: AppAssets.icons.infoPeoples,
+              title: 'Bo\'sh o\'rinlar soni: ',
+              detail: '5 ta',
+            ),
+            DetailInfo(
+              svgImage: AppAssets.icons.infoDate,
+              title: ' Davomiyligi: ',
+              detail: '15 kun',
+            ),
+            SizedBox(height: 15.h),
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 7),
+              width: double.maxFinite,
+              decoration: BoxDecoration(
+                color: AppColors.bgColor1,
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
+                ),
+              ),
+              child: Text(
+                '15 kunlik safar quyidagilarni o\'z ichiga oladi:',
+                style: AppTextStyles.openStyle16s,
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Container(
+              width: double.maxFinite,
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: AppColors.primaryColor,
+                borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(10),
+                  bottomRight: Radius.circular(10),
+                ),
+                image: DecorationImage(
+                  image: AssetImage(AppAssets.images.detailBg),
+                  fit: BoxFit.cover,
+                  alignment: Alignment.bottomRight,
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const InludeText(title: 'Olib ketish va olib kelish'),
+                  SizedBox(height: 8.h),
+                  const InludeText(title: 'Makka va Madina shaharlarida mehmonxona'),
+                  SizedBox(height: 8.h),
+                  const InludeText(title: 'Zam-Zam suv (5 litr)'),
+                  SizedBox(height: 8.h),
+                  const InludeText(title: 'Aviachiptalar'),
+                  SizedBox(height: 8.h),
+                  const InludeText(title: 'Saudia Arabistoni Umra vizasi'),
+                  SizedBox(height: 8.h),
+                  const InludeText(title: 'Transport xizmati'),
+                  SizedBox(height: 8.h),
+                  const InludeText(title: 'Firma tomonidan taqdim etiladigan hadyalar'),
+                  SizedBox(height: 8.h),
+                  const InludeText(title: '3 mahal ovqat'),
+                ],
+              ),
+            ),
+            SizedBox(height: 25.h),
             Row(
               children: [
-                SvgPicture.asset(AppAssets.icons.infoPlane),
-                const SizedBox(width: 14),
+                SvgPicture.asset(AppAssets.icons.infoPrice),
+                SizedBox(width: 12.w),
                 Text(
-                  'Jo\'nab ketiladigan sana - 14 yanvar',
-                  style: AppTextStyles.openStyle16s,
+                  'Narxi: \$1500',
+                  style: AppTextStyles.openStyle16s.copyWith(color: AppColors.textColor4),
                 ),
               ],
             ),
-            Row(
-              children: [
-                SvgPicture.asset(AppAssets.icons.infoPlane),
-                const SizedBox(width: 14),
-                Text(
-                  'Bo\'sh o\'rinlar',
-                  style: AppTextStyles.openStyle16s,
-                ),
-              ],
+            SizedBox(height: 25.h),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Batafsil ma\'lumot uchun qo\'ng\'iroq qiling',
+                style: AppTextStyles.openStyle12s.copyWith(color: AppColors.textColor4),
+              ),
             ),
             Row(
               children: [
-                SvgPicture.asset(AppAssets.icons.infoPlane),
-                const SizedBox(width: 14),
                 Text(
-                  'Jo\'nab ketiladigan sana - 14 yanvar',
-                  style: AppTextStyles.openStyle16s,
+                  '+998 (93) 990-90-90',
+                  style: AppTextStyles.openStyle28b,
                 ),
+                const Spacer(),
+                SvgPicture.asset(AppAssets.icons.dialPhone),
               ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 24),
+              child: Divider(
+                color: AppColors.primaryColor,
+              ),
+            ),
+            Row(
+              children: [
+                Text(
+                  '+998 (93) 990-90-90',
+                  style: AppTextStyles.openStyle28b,
+                ),
+                const Spacer(),
+                SvgPicture.asset(AppAssets.icons.dialPhone),
+              ],
+            ),
+            SizedBox(height: 25.h),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: RichText(
+                text: TextSpan(
+                  text: 'Manzil: ',
+                  style: AppTextStyles.openStyle14b.copyWith(color: AppColors.textColor4),
+                  children: [
+                    TextSpan(
+                      text: 'Andijon sh. O’zbekiston ko’chasi 91A',
+                      style: AppTextStyles.openStyle14s.copyWith(color: AppColors.textColor4),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton.icon(
+                onPressed: () {},
+                style: ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(AppColors.primaryColor),
+                  shape: MaterialStatePropertyAll(
+                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                  ),
+                ),
+                icon: Text(
+                  'Xaritadan ochish',
+                  style: AppTextStyles.openStyle14s.copyWith(color: Colors.white),
+                ),
+                label: const Icon(
+                  Icons.location_on,
+                  color: Colors.white,
+                  size: 20,
+                ),
+              ),
             ),
           ],
         ),
