@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:haramayn/core/constants/app_text_styles.dart';
@@ -21,10 +22,10 @@ class _MainPageState extends State<MainPage> {
   PageController pageController = PageController(initialPage: 0);
   final List<String> appBarTitles = [
     'Haramayn Tour',
-    'Foydali',
-    'Calendar',
-    'Namoz Vaqtlari',
-    'Shaxsiy Profil',
+    'titles'.tr(gender: 'useful'),
+    'titles'.tr(gender: 'daily-plans'),
+    'titles'.tr(gender: 'pray-times'),
+    'titles'.tr(gender: 'profile'),
   ];
 
   @override

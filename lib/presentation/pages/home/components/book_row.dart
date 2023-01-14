@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -26,11 +27,11 @@ class BookRow extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Kitob #$bookNum',
+                "${'home-page'.tr(gender: 'item-title')} #$bookNum",
                 style: AppTextStyles.montStyle16s,
               ),
               Text(
-                '$seeCount marta ko\'rildi',
+                '$seeCount ${'home-page'.tr(gender: 'item-happened')}',
                 style: AppTextStyles.openStyle12r,
               ),
             ],

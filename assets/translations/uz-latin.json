@@ -1,0 +1,73 @@
+{
+    "titles": {
+        "useful": "Foydali",
+        "daily-plans": "Kun tartibi",
+        "pray-times": "Namoz vaqtlari",
+        "profile": "Shaxsiy profil"
+    },
+    "welcome-page": {
+        "motto": "Sizning yo'l boshchingiz",
+        "begin": "Ishga tushirish"
+    },
+    "select-lang-page": {
+        "title": "Matn turini tanlang",
+        "continue": "Davom ettirish"
+    },
+    "login-page": {
+        "title": "Tizimga kirish",
+        "phone": "Telefon raqam",
+        "password": "Parol",
+        "forgot": "Parol esdan chiqdimi?",
+        "enter": "Kirish",
+        "no-account": "Akkount yo'qmi? ",
+        "new-account": "Yangi ro'yxatdan o'ting"
+    },
+    "sign-up-page": {
+        "title": "Ro'yxatdan o'tish",
+        "name": "F.I.Sh",
+        "phone": "+998",
+        "password": "Parol",
+        "create": "Ro'yxtdan o'tish",
+        "no-account": "Akkountingiz mavjudmi? ",
+        "enter-account": "Tizimga kirish"
+    },
+    "home-page": {
+        "direction-title": "Yo'nalish",
+        "direction-place": "Toshkent - Madina",
+        "empty-count": "Bo'sh o'rinlar soni",
+        "book-title": "Kitoblar",
+        "pray-title": "Namoz vaqtlari",
+        "item-title": "Kitob",
+        "item-happened": "marta ko'rildi"
+    },
+    "useful-page": {
+        "title1": "Zikrlar va duolar",
+        "title2": "Yo'riqnomalar",
+        "other": "yana",
+        "guide-title": "Yo'riqnoma",
+        "files": "fayl mavjud"
+    },
+    "pray-times-page": {
+        "title": "Namoz vaqtlari",
+        "pray1": "Bomdod",
+        "pray2": "Peshin",
+        "pray3": "Asr",
+        "pray4": "Shom",
+        "pray5": "Xufton",
+        "other-times": "Boshqa kungi namoz vaqtlari"
+    },
+    "profile-page": {
+        "name": "Islomjon Olimjonov",
+        "balance": "Balans",
+        "title-data": "Ma'lumotlar",
+        "branch": "Filial",
+        "branch-data": "Andijon",
+        "agent": "Rasmiylashtiruvchi agent",
+        "agent-name": "Islomjon Qodirov",
+        "price": "Summa",
+        "leader": "Ellik boshi",
+        "leader-name": "Qodirov Islomjon",
+        "title-documents": "Hujjatlar",
+        "see-documents": "Hujjatlarni ko'rish"
+    }
+}

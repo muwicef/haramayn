@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -9,6 +10,7 @@ import 'components/pray_container.dart';
 
 class PrayTimesPage extends StatelessWidget {
   const PrayTimesPage({super.key});
+  final String pageTitle = 'pray-times-page';
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class PrayTimesPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Namoz vaqtlari',
+                pageTitle.tr(gender: 'title'),
                 style: AppTextStyles.montStyle16b,
               ),
               const Spacer(),
@@ -54,28 +56,28 @@ class PrayTimesPage extends StatelessWidget {
           ),
           SizedBox(height: 37.h),
           PrayContainer(
-            title: 'Bomdod',
+            title: pageTitle.tr(gender: 'pray1'),
             imagePath: AppAssets.icons.time1,
             time: '06:24',
           ),
           PrayContainer(
-            title: 'Peshin',
+            title: pageTitle.tr(gender: 'pray2'),
             imagePath: AppAssets.icons.time2,
             time: '12:31',
             isActive: true,
           ),
           PrayContainer(
-            title: 'Asr',
+            title: pageTitle.tr(gender: 'pray3'),
             imagePath: AppAssets.icons.time3,
             time: '15:23',
           ),
           PrayContainer(
-            title: 'Shom',
+            title: pageTitle.tr(gender: 'pray4'),
             imagePath: AppAssets.icons.time4,
             time: '17:06',
           ),
           PrayContainer(
-            title: 'Xufton',
+            title: pageTitle.tr(gender: 'pray5'),
             imagePath: AppAssets.icons.time5,
             time: '18:29',
           ),
@@ -94,7 +96,7 @@ class PrayTimesPage extends StatelessWidget {
                 SvgPicture.asset(AppAssets.icons.findCalendar),
                 const SizedBox(width: 10),
                 Text(
-                  'Boshqa kungi namoz vaqtlari',
+                  pageTitle.tr(gender: 'other-times'),
                   style: AppTextStyles.openStyle14s,
                 ),
                 const Spacer(),

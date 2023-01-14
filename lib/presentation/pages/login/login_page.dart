@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -30,30 +31,30 @@ class LoginPage extends StatelessWidget {
               ),
               SizedBox(height: 88.68.h),
               Text(
-                'Tizimga kirish',
+                'login-page'.tr(gender: 'title'),
                 style: AppTextStyles.montStyle24b,
               ),
               SizedBox(height: 29.h),
               InputField(
-                hintText: 'Telefon raqam',
+                hintText: 'login-page'.tr(gender: 'phone'),
                 iconPath: AppAssets.icons.phone,
               ),
               SizedBox(height: 18.h),
               InputField(
-                hintText: 'Parol',
+                hintText: 'login-page'.tr(gender: 'password'),
                 iconPath: AppAssets.icons.lock,
               ),
               SizedBox(height: 13.h),
               Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  'Parol esdan chiqdimi?',
+                  'login-page'.tr(gender: 'forgot'),
                   style: AppTextStyles.openStyle12s,
                 ),
               ),
               SizedBox(height: 222.82.h),
               EnterButton(
-                title: 'Kirish',
+                title: 'login-page'.tr(gender: 'enter'),
                 onTap: () => Navigator.pushNamed(context, Routes.mainPage),
               ),
               SizedBox(height: 21.h),
@@ -61,13 +62,13 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Akkount yo\'qmi? ',
+                    'login-page'.tr(gender: 'no-account'),
                     style: AppTextStyles.openStyle14r,
                   ),
                   InkWell(
                     onTap: () => Navigator.pushNamed(context, Routes.signupPage),
                     child: Text(
-                      'Yangi ro\'yxatdan o\'ting',
+                      'login-page'.tr(gender: 'new-account'),
                       style: AppTextStyles.openStyle14s,
                     ),
                   ),

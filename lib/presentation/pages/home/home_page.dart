@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:haramayn/core/constants/app_assets.dart';
@@ -84,7 +85,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                   ),
                   SizedBox(height: 24.h),
                   Text(
-                    'Yo\'nalishlar',
+                    'home-page'.tr(gender: 'direction-title'),
                     style: AppTextStyles.openStyle13b,
                   ),
                   SizedBox(height: 15.h),
@@ -110,9 +111,13 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
               indicatorColor: AppColors.primaryColor,
               labelColor: AppColors.primaryColor,
               unselectedLabelColor: AppColors.welcomeTextColor.withOpacity(0.2),
-              tabs: const [
-                Tab(text: 'Kitoblar'),
-                Tab(text: 'Namoz vaqtlari'),
+              tabs: [
+                Tab(
+                  text: 'home-page'.tr(gender: 'book-title'),
+                ),
+                Tab(
+                  text: 'home-page'.tr(gender: 'pray-title'),
+                ),
               ],
             ),
           )

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -7,6 +8,8 @@ import 'components/guide_row.dart';
 
 class BooksPage extends StatelessWidget {
   const BooksPage({super.key});
+
+  final String pageTitle = 'useful-page';
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +21,11 @@ class BooksPage extends StatelessWidget {
           Row(
             children: [
               Text(
-                'Zikrlar va duolar',
+                pageTitle.tr(gender: 'title1'),
                 style: AppTextStyles.montStyle21b,
               ),
               const Spacer(),
-              Text('yana', style: AppTextStyles.openStyle12r),
+              Text(pageTitle.tr(gender: 'other'), style: AppTextStyles.openStyle12r),
             ],
           ),
           SizedBox(height: 8.h),
@@ -44,12 +47,12 @@ class BooksPage extends StatelessWidget {
           Row(
             children: [
               Text(
-                'Yo\'riqnomalar',
+                pageTitle.tr(gender: 'title2'),
                 style: AppTextStyles.montStyle21b,
               ),
               const Spacer(),
               Text(
-                'yana',
+                pageTitle.tr(gender: 'other'),
                 style: AppTextStyles.openStyle12r,
               ),
             ],

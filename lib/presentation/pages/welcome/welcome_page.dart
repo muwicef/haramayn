@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -26,7 +27,7 @@ class WelcomePage extends StatelessWidget {
               ),
               SizedBox(height: 8.5.h),
               Text(
-                'Sizning yo\'l boshchingiz',
+                'welcome-page'.tr(gender: 'motto'),
                 style: AppTextStyles.montStyle18r,
               ),
               SizedBox(height: 52.15.h),
@@ -42,7 +43,9 @@ class WelcomePage extends StatelessWidget {
                     ),
                     Positioned(
                       bottom: 0.h,
-                      child: const WelcomeButton(buttonTitle: 'Ishga tushirish'),
+                      child: WelcomeButton(
+                        buttonTitle: 'welcome-page'.tr(gender: 'begin'),
+                      ),
                     ),
                   ],
                 ),

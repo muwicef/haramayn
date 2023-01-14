@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -12,6 +13,7 @@ class GuideRow extends StatelessWidget {
     Key? key,
   }) : super(key: key);
   final int guideNum, fileCount;
+  final String pageTitle = 'useful-page';
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +27,12 @@ class GuideRow extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Yo\'riqnoma #$guideNum',
+                '${pageTitle.tr(gender: 'guide-title')} #$guideNum',
                 style: AppTextStyles.popStyle18m,
               ),
               SizedBox(height: 4.96.h),
               Text(
-                '$fileCount fayl mavjud',
+                '$fileCount ${pageTitle.tr(gender: 'files')}',
                 style: AppTextStyles.popStyle13m,
               ),
             ],

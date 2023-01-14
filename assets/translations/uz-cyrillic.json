@@ -1,0 +1,73 @@
+{
+    "titles": {
+        "useful": "Фойдали",
+        "daily-plans": "Кун тартиби",
+        "pray-times": "Намоз вақтлари",
+        "profile": "Шахсий профил"
+    },
+    "welcome-page": {
+        "motto": "Сизнинг йўл бошчингиз",
+        "begin": "Ишга тушириш"
+    },
+    "select-lang-page": {
+        "title": "Матн турини танланг",
+        "continue": "Давом эттириш"
+    },
+    "login-page": {
+        "title": "Тизимга кириш",
+        "phone": "Телефон рақам",
+        "password": "Парол",
+        "forgot": "Парол эсдан чиқдими?",
+        "enter": "Кириш",
+        "no-account": "Аккоунт йўқми? ",
+        "new-account": "Янги рўйхатдан ўтинг"
+    },
+    "sign-up-page": {
+        "title": "Рўйхатдан ўтиш",
+        "name": "Ф.И.Ш",
+        "phone": "+998",
+        "password": "Парол",
+        "create": "Рўйхатдан ўтиш",
+        "no-account": "Аккоунтингиз мавжудми? ",
+        "enter-account": "Тизимга кириш"
+    },
+    "home-page": {
+        "direction-title": "Йўналишлар",
+        "direction-place": "Тошкент - Мадина",
+        "empty-count": "Бўш ўринлар сони : ",
+        "book-title": "Китоблар",
+        "pray-title": "Намоз вақтлари",
+        "item-title": "Китоб",
+        "item-happened": "марта кўрилди"
+    },
+    "useful-page": {
+        "title1": "Зикрлар ва дуолар",
+        "title2": "Йўриқномалар",
+        "other": "яна",
+        "guide-title": "Йўриқнома",
+        "files": "файл мавжуд"
+    },
+    "pray-times-page": {
+        "title": "Намоз вақтлари",
+        "pray1": "Бомдод",
+        "pray2": "Пешин",
+        "pray3": "Аср",
+        "pray4": "Шом",
+        "pray5": "Хуфтон",
+        "other-times": "Бошқа кунги намоз вақтлари"
+    },
+    "profile-page": {
+        "name": "Исломжон Олимжонов",
+        "balance": "Баланс: ",
+        "title-data": "Маълумотлар",
+        "branch": "Филиал",
+        "branch-data": "Андижон",
+        "agent": "Расмийлаштирувчи агент",
+        "agent-name": "Исломжон Қодиров",
+        "price": "Сумма",
+        "leader": "Эллик боши",
+        "leader-name": "Қодиров Исломжон",
+        "title-documents": "Ҳужжатлар",
+        "see-documents": "Ҳужжатларни кўриш"
+    }
+}

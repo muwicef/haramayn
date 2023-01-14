@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -18,15 +19,21 @@ class SelectLanguagePage extends StatefulWidget {
 }
 
 class _SelectLanguagePageState extends State<SelectLanguagePage> {
-  LanguageType? languageType = LanguageType.latin;
+  late LanguageType? languageType;
 
   Map languages = {
     LanguageType.latin: 'Lotin alifbosi',
-    LanguageType.kirill: 'Kirill alifbosi',
+    LanguageType.kirill: 'Кирилл алифбоси',
   };
 
   @override
   Widget build(BuildContext context) {
+    if (context.locale.toString() == "uz_latin") {
+      languageType = LanguageType.latin;
+    } else {
+      languageType = LanguageType.kirill;
+    }
+
     return Scaffold(
       body: SafeArea(
         child: Center(
@@ -44,7 +51,7 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
                   height: 170.5.h,
                 ),
                 Text(
-                  'Matn turini tanlang',
+                  'select-lang-page'.tr(gender: 'title'),
                   style: AppTextStyles.montStyle24b,
                 ),
                 SizedBox(height: 18.82.h),
@@ -71,18 +78,20 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
                               groupValue: languageType,
                               onChanged: (value) => setState(() {
                                 languageType = value;
+                                context.setLocale(const Locale('uz', 'latin'));
                                 Navigator.pop(context);
                               }),
                             ),
                             RadioListTile(
                               title: Text(
-                                'Kirill alifbosi',
+                                'Кирилл алифбоси',
                                 style: AppTextStyles.montStyle16m,
                               ),
                               value: LanguageType.kirill,
                               groupValue: languageType,
                               onChanged: (value) => setState(() {
                                 languageType = value;
+                                context.setLocale(const Locale('uz', 'cyrillic'));
                                 Navigator.pop(context);
                               }),
                             ),
@@ -112,7 +121,7 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
                 ),
                 SizedBox(height: 242.h),
                 EnterButton(
-                  title: 'Davom etish',
+                  title: 'select-lang-page'.tr(gender: "continue"),
                   onTap: () => Navigator.pushNamed(context, Routes.loginPage),
                 ),
               ],

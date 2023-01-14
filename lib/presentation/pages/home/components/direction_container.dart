@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -48,7 +49,7 @@ class DirectionContainer extends StatelessWidget {
             ),
             SizedBox(height: 28.h),
             Text(
-              'Toshkent - Madina',
+              'home-page'.tr(gender: 'direction-place'),
               style: AppTextStyles.montStyle19b,
             ),
             const SizedBox(height: 6),
@@ -58,7 +59,7 @@ class DirectionContainer extends StatelessWidget {
                 const SizedBox(width: 6),
                 RichText(
                   text: TextSpan(
-                    text: 'Bo\'sh o\'rinlar soni : ',
+                    text: 'home-page'.tr(gender: 'empty-count'),
                     style: AppTextStyles.openStyle14r.copyWith(color: Colors.white),
                     children: [
                       TextSpan(

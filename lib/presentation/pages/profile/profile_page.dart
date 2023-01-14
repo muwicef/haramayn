@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -5,8 +6,11 @@ import 'package:haramayn/core/constants/app_assets.dart';
 import 'package:haramayn/core/constants/app_colors.dart';
 import 'package:haramayn/core/constants/app_text_styles.dart';
 
+import 'components/data_richtext.dart';
+
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
+  final String pageTitle = 'profile-page';
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +30,7 @@ class ProfilePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Islomjon Olimjonov',
+                    pageTitle.tr(gender: 'name'),
                     style: AppTextStyles.openStyle14b.copyWith(color: Colors.black),
                   ),
                   const SizedBox(height: 4),
@@ -43,7 +47,7 @@ class ProfilePage extends StatelessWidget {
           SizedBox(height: 13.h),
           RichText(
             text: TextSpan(
-              text: 'Balans: ',
+              text: pageTitle.tr(gender: 'balance'),
               style: AppTextStyles.openStyle16b.copyWith(color: Colors.black),
               children: [
                 TextSpan(
@@ -55,7 +59,7 @@ class ProfilePage extends StatelessWidget {
           ),
           SizedBox(height: 17.h),
           Text(
-            'Ma\'lumotlar',
+            pageTitle.tr(gender: 'title-data'),
             style: AppTextStyles.openStyle12b,
           ),
           SizedBox(height: 4.h),
@@ -75,28 +79,28 @@ class ProfilePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Ma\'lumotlar',
+                  pageTitle.tr(gender: 'title-data'),
                   style: AppTextStyles.openStyle16b,
                 ),
                 SizedBox(height: 10.h),
-                Text(
-                  'Filial: Andijon',
-                  style: AppTextStyles.openStyle14s.copyWith(color: Colors.white),
+                DataRichText(
+                  title: pageTitle.tr(gender: 'branch'),
+                  subtitle: pageTitle.tr(gender: 'branch-data'),
                 ),
                 SizedBox(height: 6.h),
-                Text(
-                  'Rasmiylashtiruvchi agent: Islomjon Qodirov',
-                  style: AppTextStyles.openStyle14s.copyWith(color: Colors.white),
+                DataRichText(
+                  title: pageTitle.tr(gender: 'agent'),
+                  subtitle: pageTitle.tr(gender: 'agent-name'),
                 ),
                 SizedBox(height: 6.h),
-                Text(
-                  'Summa: \$1500',
-                  style: AppTextStyles.openStyle14s.copyWith(color: Colors.white),
+                DataRichText(
+                  title: pageTitle.tr(gender: 'price'),
+                  subtitle: '\$1500',
                 ),
                 SizedBox(height: 6.h),
-                Text(
-                  'Ellik boshi: Qodir Islomjonov',
-                  style: AppTextStyles.openStyle14s.copyWith(color: Colors.white),
+                DataRichText(
+                  title: pageTitle.tr(gender: 'leader'),
+                  subtitle: pageTitle.tr(gender: 'leader-name'),
                 ),
                 SizedBox(height: 22.h),
               ],
@@ -104,7 +108,7 @@ class ProfilePage extends StatelessWidget {
           ),
           SizedBox(height: 16.h),
           Text(
-            'Hujjatlar',
+            pageTitle.tr(gender: 'title-documents'),
             style: AppTextStyles.openStyle12b,
           ),
           SizedBox(height: 4.h),
@@ -131,7 +135,7 @@ class ProfilePage extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            'Hujjatlarni ko\'rish',
+                            pageTitle.tr(gender: 'see-documents'),
                             style: AppTextStyles.openStyle16b,
                           ),
                           SizedBox(width: 8.w),

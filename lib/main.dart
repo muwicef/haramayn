@@ -1,11 +1,24 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'presentation/routes.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [
+        Locale('uz', 'latin'),
+        Locale('uz', 'cyrillic'),
+      ],
+      saveLocale: true,
+      path: 'assets/translations',
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -26,6 +39,9 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => MaterialApp(
         title: 'Haramayn Tour Demo',
         debugShowCheckedModeBanner: false,
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
         onGenerateRoute: (setting) => Routes.generateRoute(setting),
       ),
     );
