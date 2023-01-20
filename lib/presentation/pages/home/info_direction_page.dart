@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:haramayn/core/constants/app_colors.dart';
 import 'package:haramayn/core/constants/app_text_styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/constants/app_assets.dart';
 import 'components/detail_info.dart';
@@ -133,7 +134,9 @@ class InfoDirectionPage extends StatelessWidget {
                   style: AppTextStyles.openStyle28b,
                 ),
                 const Spacer(),
-                SvgPicture.asset(AppAssets.icons.dialPhone),
+                InkWell(
+                    onTap: () => launchUrl(Uri.parse("tel:+998 93 990 90 90")),
+                    child: SvgPicture.asset(AppAssets.icons.dialPhone)),
               ],
             ),
             Padding(
@@ -149,7 +152,9 @@ class InfoDirectionPage extends StatelessWidget {
                   style: AppTextStyles.openStyle28b,
                 ),
                 const Spacer(),
-                SvgPicture.asset(AppAssets.icons.dialPhone),
+                InkWell(
+                    onTap: () => launchUrl(Uri.parse("tel:+998 93 990 90 90")),
+                    child: SvgPicture.asset(AppAssets.icons.dialPhone)),
               ],
             ),
             SizedBox(height: 25.h),

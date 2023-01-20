@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'presentation/routes.dart';
@@ -16,7 +17,9 @@ void main() async {
       ],
       saveLocale: true,
       path: 'assets/translations',
-      child: const MyApp(),
+      child: Phoenix(
+        child: const MyApp(),
+      ),
     ),
   );
 }

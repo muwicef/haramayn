@@ -1,7 +1,7 @@
 {
     "titles": {
         "useful": "Foydali",
-        "daily-plans": "Kun tartibi",
+        "daily-plans": "Yo'l xaritasi",
         "pray-times": "Namoz vaqtlari",
         "profile": "Shaxsiy profil"
     },
@@ -34,7 +34,7 @@
     "home-page": {
         "direction-title": "Yo'nalish",
         "direction-place": "Toshkent - Madina",
-        "empty-count": "Bo'sh o'rinlar soni",
+        "empty-count": "Bo'sh o'rinlar soni: ",
         "book-title": "Kitoblar",
         "pray-title": "Namoz vaqtlari",
         "item-title": "Kitob",
@@ -58,7 +58,7 @@
     },
     "profile-page": {
         "name": "Islomjon Olimjonov",
-        "balance": "Balans",
+        "balance": "Balans: ",
         "title-data": "Ma'lumotlar",
         "branch": "Filial",
         "branch-data": "Andijon",

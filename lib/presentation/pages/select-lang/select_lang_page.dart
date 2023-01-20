@@ -26,6 +26,8 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
     LanguageType.kirill: 'Кирилл алифбоси',
   };
 
+  final jobRoleCtrl = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     if (context.locale.toString() == "uz_latin") {

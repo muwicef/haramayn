@@ -12,6 +12,13 @@ class AppTextStyles {
     color: AppColors.primaryColor,
   );
 
+  static TextStyle openStyle18b = TextStyle(
+    fontFamily: 'OpenSans',
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w700,
+    color: Colors.white,
+  );
+
   static TextStyle openStyle18s = TextStyle(
     fontFamily: 'OpenSans',
     fontSize: 18.sp,
@@ -201,6 +208,20 @@ class AppTextStyles {
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
     color: AppColors.welcomeTextColor.withOpacity(0.2),
+  );
+
+  static TextStyle montStyle13r = TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w400,
+    color: Colors.white,
+  );
+
+  static TextStyle montStyle12b = TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.primaryColor,
   );
 
   static TextStyle montStyle12s = TextStyle(

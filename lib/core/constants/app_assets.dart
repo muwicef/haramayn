@@ -100,6 +100,10 @@ class AppIcons extends AssetsFolder {
   String get visa => '$basePath/visa.svg';
 
   String get document => '$basePath/document.svg';
+
+  String get location2 => '$basePath/location2.svg';
+
+  String get time6 => '$basePath/time6.svg';
 }
 
 class AppImages extends AssetsFolder {
