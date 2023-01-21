@@ -57,69 +57,57 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
                   style: AppTextStyles.montStyle24b,
                 ),
                 SizedBox(height: 18.82.h),
-                InkWell(
-                  onTap: () => showModalBottomSheet(
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(24),
-                        topRight: Radius.circular(24),
-                      ),
-                    ),
-                    context: context,
-                    builder: (context) {
-                      return SizedBox(
-                        height: 112,
-                        child: Column(
-                          children: [
-                            RadioListTile(
-                              title: Text(
-                                'Lotin alifbosi',
-                                style: AppTextStyles.montStyle16m,
-                              ),
-                              value: LanguageType.latin,
-                              groupValue: languageType,
-                              onChanged: (value) => setState(() {
-                                languageType = value;
-                                context.setLocale(const Locale('uz', 'latin'));
-                                Navigator.pop(context);
-                              }),
-                            ),
-                            RadioListTile(
-                              title: Text(
-                                'Кирилл алифбоси',
-                                style: AppTextStyles.montStyle16m,
-                              ),
-                              value: LanguageType.kirill,
-                              groupValue: languageType,
-                              onChanged: (value) => setState(() {
-                                languageType = value;
-                                context.setLocale(const Locale('uz', 'cyrillic'));
-                                Navigator.pop(context);
-                              }),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                  ),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-                    decoration: BoxDecoration(
-                      border: Border.all(width: 1, color: AppColors.inputBorderColor),
+                DropdownButtonFormField(
+                  decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(width: 1, color: AppColors.inputBorderColor),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SvgPicture.asset(AppAssets.icons.language),
-                        Text(
-                          languages[languageType],
-                          style: AppTextStyles.montStyle16m,
-                        ),
-                        SvgPicture.asset(AppAssets.icons.arrowBottom),
-                      ],
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(width: 1, color: AppColors.inputBorderColor),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: SvgPicture.asset(AppAssets.icons.language),
                     ),
                   ),
+                  value: languageType,
+                  borderRadius: BorderRadius.circular(12),
+                  isExpanded: true,
+                  iconEnabledColor: AppColors.primaryColor,
+                  style: AppTextStyles.montStyle16m,
+                  items: [
+                    DropdownMenuItem(
+                      value: LanguageType.latin,
+                      child: Center(
+                        child: Text(
+                          'Lotin alifbosi',
+                          style: AppTextStyles.montStyle16m,
+                        ),
+                      ),
+                    ),
+                    DropdownMenuItem(
+                      value: LanguageType.kirill,
+                      child: Center(
+                        child: Text(
+                          'Кирилл алифбоси',
+                          style: AppTextStyles.montStyle16m,
+                        ),
+                      ),
+                    ),
+                  ],
+                  onChanged: (value) {
+                    setState(() {
+                      languageType = value;
+                      if (value == LanguageType.latin) {
+                        context.setLocale(const Locale('uz', 'latin'));
+                      } else {
+                        context.setLocale(const Locale('uz', 'cyrillic'));
+                      }
+                    });
+                  },
                 ),
                 SizedBox(height: 242.h),
                 EnterButton(
