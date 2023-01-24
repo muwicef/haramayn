@@ -8,13 +8,16 @@ class InputField extends StatelessWidget {
   const InputField({
     required this.hintText,
     required this.iconPath,
+    this.controller,
     Key? key,
   }) : super(key: key);
   final String hintText, iconPath;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: AppTextStyles.montStyle16r,

@@ -1,9 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/constants/app_assets.dart';
 import '../../../core/constants/app_text_styles.dart';
+import '../../../core/provider/user_provider.dart';
 import '../../components/enter_button.dart';
 import '../../components/input_field.dart';
 import '../../routes.dart';
@@ -13,6 +15,13 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController phoneController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+    TextEditingController nameController = TextEditingController();
+    phoneController.text = '+998';
+
+    var data = Provider.of<UserProvider>(context, listen: false);
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
@@ -38,21 +47,52 @@ class SignUpPage extends StatelessWidget {
               InputField(
                 hintText: 'sign-up-page'.tr(gender: 'name'),
                 iconPath: AppAssets.icons.user,
+                controller: nameController,
               ),
               SizedBox(height: 18.h),
               InputField(
                 hintText: '+998',
                 iconPath: AppAssets.icons.phone,
+                controller: phoneController,
               ),
               SizedBox(height: 18.h),
               InputField(
                 hintText: 'sign-up-page'.tr(gender: 'password'),
                 iconPath: AppAssets.icons.lock,
+                controller: passwordController,
               ),
               SizedBox(height: 222.82.h),
               EnterButton(
                 title: 'sign-up-page'.tr(gender: 'create'),
-                onTap: () => Navigator.pushNamed(context, Routes.mainPage),
+                onTap: () => {
+                  data
+                      .registrate(
+                        nameController.text,
+                        phoneController.text,
+                        passwordController.text,
+                      )
+                      .then(
+                        (value) => {
+                          if (data.regStatusCode == 201)
+                            {
+                              data.loadData(phoneController.text, passwordController.text),
+                              Navigator.pushNamedAndRemoveUntil(
+                                context,
+                                Routes.mainPage,
+                                (_) => false,
+                              ),
+                            }
+                          else
+                            {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text('Tizimdan ro\'yxatda o\'tishda xatolik bor'),
+                                ),
+                              )
+                            }
+                        },
+                      ),
+                },
               ),
               SizedBox(height: 21.h),
               Row(
@@ -63,7 +103,9 @@ class SignUpPage extends StatelessWidget {
                     style: AppTextStyles.openStyle14r,
                   ),
                   InkWell(
-                    onTap: () => Navigator.pushNamed(context, Routes.loginPage),
+                    onTap: () => {
+                      Navigator.pop(context),
+                    },
                     child: Text(
                       'sign-up-page'.tr(gender: 'enter-account'),
                       style: AppTextStyles.openStyle14s,

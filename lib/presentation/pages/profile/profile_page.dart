@@ -5,6 +5,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:haramayn/core/constants/app_assets.dart';
 import 'package:haramayn/core/constants/app_colors.dart';
 import 'package:haramayn/core/constants/app_text_styles.dart';
+import 'package:haramayn/core/provider/user_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'components/data_richtext.dart';
 
@@ -14,6 +16,8 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var data = context.read<UserProvider>();
+
     return Padding(
       padding: const EdgeInsets.all(24),
       child: Column(
@@ -30,12 +34,12 @@ class ProfilePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    pageTitle.tr(gender: 'name'),
+                    data.userData.data![0].name!,
                     style: AppTextStyles.openStyle14b.copyWith(color: Colors.black),
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    '+998 93 990-90-90',
+                    data.userData.data![0].phone!,
                     style: AppTextStyles.openStyle14r,
                   ),
                 ],
@@ -51,7 +55,7 @@ class ProfilePage extends StatelessWidget {
               style: AppTextStyles.openStyle16b.copyWith(color: Colors.black),
               children: [
                 TextSpan(
-                  text: '1500\$',
+                  text: '${data.userData.data![0].balans}\$',
                   style: AppTextStyles.openStyle16r.copyWith(color: Colors.black),
                 ),
               ],

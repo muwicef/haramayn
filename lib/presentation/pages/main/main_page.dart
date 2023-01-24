@@ -58,55 +58,55 @@ class _MainPageState extends State<MainPage> {
         elevation: 0,
         backgroundColor: Colors.white,
         leading: const SizedBox(),
-        actions: [
-          PopupMenuButton(
-            child: Container(
-              margin: const EdgeInsets.fromLTRB(0, 12, 24, 12),
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: AppColors.primaryColor,
-                  width: 1,
-                ),
-                borderRadius: BorderRadius.circular(43),
-              ),
-              child: Row(
-                children: [
-                  Text(
-                    languages[languageType],
-                    style: AppTextStyles.montStyle12b,
-                  ),
-                  const SizedBox(width: 8),
-                  SvgPicture.asset(AppAssets.icons.arrowBottom),
-                ],
-              ),
-            ),
-            itemBuilder: (context) => [
-              PopupMenuItem(
-                child: Text(
-                  'Lotin',
-                  style: AppTextStyles.montStyle16r.copyWith(color: AppColors.textColor4),
-                ),
-                onTap: () async {
-                  languageType = LanguageType.latin;
-                  await context.setLocale(const Locale('uz', 'latin'));
-                  setState(() {});
-                },
-              ),
-              PopupMenuItem(
-                child: Text(
-                  'Кирилл',
-                  style: AppTextStyles.montStyle16r.copyWith(color: AppColors.textColor4),
-                ),
-                onTap: () async {
-                  languageType = LanguageType.kirill;
-                  await context.setLocale(const Locale('uz', 'cyrillic'));
-                  setState(() {});
-                },
-              ),
-            ],
-          )
-        ],
+        // // actions: [
+        // //   PopupMenuButton(
+        // //     child: Container(
+        // //       margin: const EdgeInsets.fromLTRB(0, 12, 24, 12),
+        // //       padding: const EdgeInsets.symmetric(horizontal: 12),
+        // //       decoration: BoxDecoration(
+        // //         border: Border.all(
+        // //           color: AppColors.primaryColor,
+        // //           width: 1,
+        // //         ),
+        // //         borderRadius: BorderRadius.circular(43),
+        // //       ),
+        // //       child: Row(
+        // //         children: [
+        // //           Text(
+        // //             languages[languageType],
+        // //             style: AppTextStyles.montStyle12b,
+        // //           ),
+        // //           const SizedBox(width: 8),
+        // //           SvgPicture.asset(AppAssets.icons.arrowBottom),
+        // //         ],
+        // //       ),
+        // //     ),
+        // //     itemBuilder: (context) => [
+        // //       PopupMenuItem(
+        // //         child: Text(
+        // //           'Lotin',
+        // //           style: AppTextStyles.montStyle16r.copyWith(color: AppColors.textColor4),
+        // //         ),
+        // //         onTap: () {
+        // //           languageType = LanguageType.latin;
+        // //           context.setLocale(const Locale('uz', 'latin'));
+        // //           setState(() {});
+        // //         },
+        // //       ),
+        // //       PopupMenuItem(
+        // //         child: Text(
+        // //           'Кирилл',
+        // //           style: AppTextStyles.montStyle16r.copyWith(color: AppColors.textColor4),
+        // //         ),
+        // //         onTap: () {
+        // //           languageType = LanguageType.kirill;
+        // //           context.setLocale(const Locale('uz', 'cyrillic'));
+        // //           setState(() {});
+        // //         },
+        // //       ),
+        // //     ],
+        //   )
+        // ],
       ),
       body: PageView(
         controller: pageController,
