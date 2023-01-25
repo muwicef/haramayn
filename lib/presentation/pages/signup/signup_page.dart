@@ -65,6 +65,14 @@ class SignUpPage extends StatelessWidget {
               EnterButton(
                 title: 'sign-up-page'.tr(gender: 'create'),
                 onTap: () => {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return const Center(
+                        child: CircularProgressIndicator.adaptive(),
+                      );
+                    },
+                  ),
                   data
                       .registrate(
                         nameController.text,
@@ -88,7 +96,8 @@ class SignUpPage extends StatelessWidget {
                                 const SnackBar(
                                   content: Text('Tizimdan ro\'yxatda o\'tishda xatolik bor'),
                                 ),
-                              )
+                              ),
+                              Navigator.pop(context),
                             }
                         },
                       ),

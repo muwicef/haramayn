@@ -4,6 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:haramayn/core/provider/pray_provider.dart';
 import 'package:haramayn/core/provider/user_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -18,6 +19,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => UserProvider()),
+        ChangeNotifierProvider(create: (context) => PrayProvider()),
       ],
       child: EasyLocalization(
         supportedLocales: const [

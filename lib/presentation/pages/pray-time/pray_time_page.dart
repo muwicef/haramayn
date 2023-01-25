@@ -1,112 +1,77 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:haramayn/core/constants/app_assets.dart';
 import 'package:haramayn/core/constants/app_colors.dart';
 import 'package:haramayn/core/constants/app_text_styles.dart';
+import 'package:haramayn/core/provider/pray_provider.dart';
+import 'package:haramayn/data/models/pray_model.dart';
+import 'package:haramayn/presentation/pages/pray-time/components/pray_tab.dart';
+import 'package:provider/provider.dart';
 
-import 'components/pray_container.dart';
-
-class PrayTimesPage extends StatelessWidget {
+class PrayTimesPage extends StatefulWidget {
   const PrayTimesPage({super.key});
+
+  @override
+  State<PrayTimesPage> createState() => _PrayTimesPageState();
+}
+
+class _PrayTimesPageState extends State<PrayTimesPage> with TickerProviderStateMixin {
   final String pageTitle = 'pray-times-page';
+  late TabController tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    tabController = TabController(length: 3, vsync: this);
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
+    var data = context.watch<PrayProvider>();
+
+    return Provider(
+      create: (_) => PrayProvider(),
+      child: data.isLoading
+          ? prayTimePage(data)
+          : const Center(
+              child: CircularProgressIndicator.adaptive(),
+            ),
+    );
+  }
+
+  DefaultTabController prayTimePage(PrayProvider data) {
+    Timings dataTashkent = data.curTashkentData();
+    Timings dataMakkah = data.curMakkahData();
+    Timings dataMadina = data.curMadinaData();
+
+    return DefaultTabController(
+      length: 3,
       child: Column(
         children: [
-          SizedBox(height: 63.h),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                pageTitle.tr(gender: 'title'),
-                style: AppTextStyles.montStyle16b,
-              ),
-              const Spacer(),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Row(
-                    children: [
-                      SvgPicture.asset(AppAssets.icons.location),
-                      SizedBox(width: 10.w),
-                      Text(
-                        'Farg\'ona',
-                        style: AppTextStyles.openStyle12s,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      SvgPicture.asset(AppAssets.icons.calendarBlack),
-                      SizedBox(width: 10.w),
-                      Text(
-                        '6 - dekabar 2023',
-                        style: AppTextStyles.openStyle12s,
-                      ),
-                    ],
-                  )
-                ],
-              )
+          TabBar(
+            padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+            controller: tabController,
+            labelStyle: AppTextStyles.montStyle14b,
+            unselectedLabelStyle: AppTextStyles.montStyle14m,
+            indicatorWeight: 3.16.h,
+            indicatorColor: AppColors.primaryColor,
+            labelColor: AppColors.primaryColor,
+            unselectedLabelColor: AppColors.welcomeTextColor.withOpacity(0.2),
+            tabs: const [
+              Tab(text: 'Toshkent'),
+              Tab(text: 'Madina'),
+              Tab(text: 'Makka'),
             ],
           ),
-          SizedBox(height: 37.h),
-          PrayContainer(
-            title: pageTitle.tr(gender: 'pray1'),
-            imagePath: AppAssets.icons.time1,
-            time: '06:24',
-          ),
-          PrayContainer(
-            title: pageTitle.tr(gender: 'pray2'),
-            imagePath: AppAssets.icons.time2,
-            time: '12:31',
-            isActive: true,
-          ),
-          PrayContainer(
-            title: pageTitle.tr(gender: 'pray3'),
-            imagePath: AppAssets.icons.time3,
-            time: '15:23',
-          ),
-          PrayContainer(
-            title: pageTitle.tr(gender: 'pray4'),
-            imagePath: AppAssets.icons.time4,
-            time: '17:06',
-          ),
-          PrayContainer(
-            title: pageTitle.tr(gender: 'pray5'),
-            imagePath: AppAssets.icons.time5,
-            time: '18:29',
-          ),
-          const Spacer(),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 17),
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: AppColors.textColor.withOpacity(0.35),
-                width: 1,
-              ),
-              borderRadius: BorderRadius.circular(39),
-            ),
-            child: Row(
+          Flexible(
+            child: TabBarView(
+              controller: tabController,
               children: [
-                SvgPicture.asset(AppAssets.icons.findCalendar),
-                const SizedBox(width: 10),
-                Text(
-                  pageTitle.tr(gender: 'other-times'),
-                  style: AppTextStyles.openStyle14s,
-                ),
-                const Spacer(),
-                SvgPicture.asset(
-                  AppAssets.icons.arrowRight,
-                )
+                PrayTab(data: dataTashkent),
+                PrayTab(data: dataMadina),
+                PrayTab(data: dataMakkah),
               ],
             ),
-          ),
-          SizedBox(height: 40.h)
+          )
         ],
       ),
     );

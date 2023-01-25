@@ -66,6 +66,14 @@ class LoginPage extends StatelessWidget {
               EnterButton(
                 title: 'login-page'.tr(gender: 'enter'),
                 onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return const Center(
+                        child: CircularProgressIndicator.adaptive(),
+                      );
+                    },
+                  );
                   data.loadData(phoneController.text, passwordController.text).then((value) => {
                         if (data.userData.error == false)
                           {
@@ -81,7 +89,8 @@ class LoginPage extends StatelessWidget {
                               const SnackBar(
                                 content: Text('Login yoki parol xato kiritildi'),
                               ),
-                            )
+                            ),
+                            Navigator.pop(context),
                           }
                       });
                 },
