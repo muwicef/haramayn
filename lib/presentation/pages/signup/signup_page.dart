@@ -26,11 +26,11 @@ class SignUpPage extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 40.w),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 100.h),
               Center(
                 child: Image.asset(
                   AppAssets.images.logo,
@@ -54,14 +54,16 @@ class SignUpPage extends StatelessWidget {
                 hintText: '+998',
                 iconPath: AppAssets.icons.phone,
                 controller: phoneController,
+                keyboardType: TextInputType.phone,
               ),
               SizedBox(height: 18.h),
               InputField(
                 hintText: 'sign-up-page'.tr(gender: 'password'),
                 iconPath: AppAssets.icons.lock,
                 controller: passwordController,
+                isPassword: true,
               ),
-              SizedBox(height: 222.82.h),
+              const Spacer(),
               EnterButton(
                 title: 'sign-up-page'.tr(gender: 'create'),
                 onTap: () => {
@@ -121,7 +123,8 @@ class SignUpPage extends StatelessWidget {
                     ),
                   ),
                 ],
-              )
+              ),
+              SizedBox(height: 50.h),
             ],
           ),
         ),

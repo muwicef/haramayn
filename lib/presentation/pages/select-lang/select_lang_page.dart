@@ -38,84 +38,82 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
 
     return Scaffold(
       body: SafeArea(
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 40.w),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  AppAssets.images.logo,
-                  width: 174.w,
-                  height: 119.5.h,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 40.w),
+          child: Column(
+            children: [
+              SizedBox(height: 100.h),
+              Image.asset(
+                AppAssets.images.logo,
+                width: 174.w,
+                height: 119.5.h,
+              ),
+              SizedBox(
+                height: 170.5.h,
+              ),
+              Text(
+                'select-lang-page'.tr(gender: 'title'),
+                style: AppTextStyles.montStyle24b,
+              ),
+              SizedBox(height: 18.82.h),
+              DropdownButtonFormField(
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(width: 1, color: AppColors.inputBorderColor),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(width: 1, color: AppColors.inputBorderColor),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: SvgPicture.asset(AppAssets.icons.language),
+                  ),
                 ),
-                SizedBox(
-                  height: 170.5.h,
-                ),
-                Text(
-                  'select-lang-page'.tr(gender: 'title'),
-                  style: AppTextStyles.montStyle24b,
-                ),
-                SizedBox(height: 18.82.h),
-                DropdownButtonFormField(
-                  decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: AppColors.inputBorderColor),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: AppColors.inputBorderColor),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: SvgPicture.asset(AppAssets.icons.language),
+                value: languageType,
+                borderRadius: BorderRadius.circular(12),
+                isExpanded: true,
+                iconEnabledColor: AppColors.primaryColor,
+                style: AppTextStyles.montStyle16m,
+                items: [
+                  DropdownMenuItem(
+                    value: LanguageType.latin,
+                    child: Center(
+                      child: Text(
+                        'Lotin alifbosi',
+                        style: AppTextStyles.montStyle16m,
+                      ),
                     ),
                   ),
-                  value: languageType,
-                  borderRadius: BorderRadius.circular(12),
-                  isExpanded: true,
-                  iconEnabledColor: AppColors.primaryColor,
-                  style: AppTextStyles.montStyle16m,
-                  items: [
-                    DropdownMenuItem(
-                      value: LanguageType.latin,
-                      child: Center(
-                        child: Text(
-                          'Lotin alifbosi',
-                          style: AppTextStyles.montStyle16m,
-                        ),
+                  DropdownMenuItem(
+                    value: LanguageType.kirill,
+                    child: Center(
+                      child: Text(
+                        'Кирилл алифбоси',
+                        style: AppTextStyles.montStyle16m,
                       ),
                     ),
-                    DropdownMenuItem(
-                      value: LanguageType.kirill,
-                      child: Center(
-                        child: Text(
-                          'Кирилл алифбоси',
-                          style: AppTextStyles.montStyle16m,
-                        ),
-                      ),
-                    ),
-                  ],
-                  onChanged: (value) {
-                    setState(() {
-                      languageType = value;
-                      if (value == LanguageType.latin) {
-                        context.setLocale(const Locale('uz', 'latin'));
-                      } else {
-                        context.setLocale(const Locale('uz', 'cyrillic'));
-                      }
-                    });
-                  },
-                ),
-                SizedBox(height: 242.h),
-                EnterButton(
-                  title: 'select-lang-page'.tr(gender: "continue"),
-                  onTap: () => Navigator.pushNamed(context, Routes.loginPage),
-                ),
-              ],
-            ),
+                  ),
+                ],
+                onChanged: (value) {
+                  setState(() {
+                    languageType = value;
+                    if (value == LanguageType.latin) {
+                      context.setLocale(const Locale('uz', 'latin'));
+                    } else {
+                      context.setLocale(const Locale('uz', 'cyrillic'));
+                    }
+                  });
+                },
+              ),
+              SizedBox(height: 242.h),
+              EnterButton(
+                title: 'select-lang-page'.tr(gender: "continue"),
+                onTap: () => Navigator.pushNamed(context, Routes.loginPage),
+              ),
+            ],
           ),
         ),
       ),

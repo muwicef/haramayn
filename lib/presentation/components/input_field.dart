@@ -9,15 +9,21 @@ class InputField extends StatelessWidget {
     required this.hintText,
     required this.iconPath,
     this.controller,
+    this.keyboardType,
+    this.isPassword = false,
     Key? key,
   }) : super(key: key);
   final String hintText, iconPath;
   final TextEditingController? controller;
+  final TextInputType? keyboardType;
+  final bool isPassword;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
+      keyboardType: keyboardType,
+      obscureText: isPassword,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: AppTextStyles.montStyle16r,
