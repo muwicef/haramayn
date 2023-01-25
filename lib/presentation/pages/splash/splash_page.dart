@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:haramayn/core/constants/app_assets.dart';
 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../core/constants/app_assets.dart';
 import '../../routes.dart';
 
 class SplashPage extends StatelessWidget {

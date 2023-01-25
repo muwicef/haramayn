@@ -1,7 +1,8 @@
 import 'dart:convert';
 
-import 'package:haramayn/data/models/pray_model.dart';
 import 'package:http/http.dart';
+
+import '../../data/models/pray_model.dart';
 
 class PrayService {
   static Future<PrayModel> getPrayTimes(String city, String country, int month, int year) async {

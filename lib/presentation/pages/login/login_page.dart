@@ -1,11 +1,12 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/constants/app_assets.dart';
 import '../../../core/constants/app_text_styles.dart';
 import '../../../core/provider/user_provider.dart';
+import '../../../core/constants/app_assets.dart';
 import '../../components/enter_button.dart';
 import '../../components/input_field.dart';
 import '../../routes.dart';
@@ -72,7 +73,7 @@ class LoginPage extends StatelessWidget {
                     context: context,
                     builder: (context) {
                       return const Center(
-                        child: CircularProgressIndicator.adaptive(),
+                        child: CircularProgressIndicator.adaptive(backgroundColor: Colors.red),
                       );
                     },
                   );

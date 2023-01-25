@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:haramayn/core/constants/app_colors.dart';
+
+import 'app_colors.dart';
 
 class AppTextStyles {
   // Open Sans Text Styles

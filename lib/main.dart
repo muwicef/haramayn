@@ -1,13 +1,13 @@
-import 'dart:io';
-
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'dart:io';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:haramayn/core/provider/pray_provider.dart';
-import 'package:haramayn/core/provider/user_provider.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:provider/provider.dart';
 
+import 'core/provider/pray_provider.dart';
+import 'core/provider/user_provider.dart';
 import 'presentation/routes.dart';
 
 void main() async {
@@ -59,6 +59,10 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       builder: (context, child) => MaterialApp(
         title: 'Haramayn Tour Demo',
+        theme: ThemeData(
+          useMaterial3: true,
+          colorSchemeSeed: Colors.white,
+        ),
         debugShowCheckedModeBanner: false,
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,

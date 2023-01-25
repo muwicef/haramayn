@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:haramayn/core/services/pray_service.dart';
-import 'package:haramayn/data/models/pray_model.dart';
+
+import '../../data/models/pray_model.dart';
+import '../services/pray_service.dart';
 
 class PrayProvider extends ChangeNotifier {
   PrayModel prayDateTashkent = PrayModel();

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:haramayn/presentation/pages/home/info_direction_page.dart';
-import 'package:haramayn/presentation/pages/main/main_page.dart';
-import 'package:haramayn/presentation/pages/select-lang/select_lang_page.dart';
 
-import 'pages/login/login_page.dart';
+import 'pages/select-lang/select_lang_page.dart';
+import 'pages/home/info_direction_page.dart';
+import 'pages/welcome/welcome_page.dart';
 import 'pages/signup/signup_page.dart';
 import 'pages/splash/splash_page.dart';
-import 'pages/welcome/welcome_page.dart';
+import 'pages/login/login_page.dart';
+import 'pages/main/main_page.dart';
 
 class Routes {
   static const splashPage = '/';

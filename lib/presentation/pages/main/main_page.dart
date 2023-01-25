@@ -1,14 +1,15 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:haramayn/core/constants/app_text_styles.dart';
 
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../../core/constants/app_text_styles.dart';
 import '../../../core/constants/app_assets.dart';
-import '../books/books_page.dart';
-import '../calendar/calendar_page.dart';
-import '../home/home_page.dart';
 import '../pray-time/pray_time_page.dart';
+import '../calendar/calendar_page.dart';
 import '../profile/profile_page.dart';
+import '../books/books_page.dart';
+import '../home/home_page.dart';
 
 enum LanguageType { latin, kirill }
 

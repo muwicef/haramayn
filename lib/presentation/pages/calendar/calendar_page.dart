@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_svg/svg.dart';
-import 'package:haramayn/core/constants/app_assets.dart';
-import 'package:haramayn/core/constants/app_colors.dart';
-import 'package:haramayn/core/constants/app_text_styles.dart';
+
+import '../../../core/constants/app_assets.dart';
+import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/app_text_styles.dart';
 
 class CalendarPage extends StatelessWidget {
   const CalendarPage({super.key});

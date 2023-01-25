@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:haramayn/core/constants/app_colors.dart';
-import 'package:haramayn/core/constants/app_text_styles.dart';
-import 'package:haramayn/core/provider/pray_provider.dart';
-import 'package:haramayn/data/models/pray_model.dart';
-import 'package:haramayn/presentation/pages/pray-time/components/pray_tab.dart';
 import 'package:provider/provider.dart';
+
+import '../../../core/constants/app_text_styles.dart';
+import '../../../core/provider/pray_provider.dart';
+import '../../../core/constants/app_colors.dart';
+import '../../../data/models/pray_model.dart';
+import 'components/pray_tab.dart';
 
 class PrayTimesPage extends StatefulWidget {
   const PrayTimesPage({super.key});
