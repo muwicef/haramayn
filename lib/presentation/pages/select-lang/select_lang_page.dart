@@ -57,57 +57,60 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
                 style: AppTextStyles.montStyle24b,
               ),
               SizedBox(height: 18.82.h),
-              DropdownButtonFormField(
-                decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(width: 1, color: AppColors.inputBorderColor),
-                    borderRadius: BorderRadius.circular(12),
+              ButtonTheme(
+                alignedDropdown: true,
+                child: DropdownButtonFormField(
+                  decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(width: 1, color: AppColors.inputBorderColor),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(width: 1, color: AppColors.inputBorderColor),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: SvgPicture.asset(AppAssets.icons.language),
+                    ),
                   ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(width: 1, color: AppColors.inputBorderColor),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  prefixIcon: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: SvgPicture.asset(AppAssets.icons.language),
-                  ),
+                  value: languageType,
+                  borderRadius: BorderRadius.circular(12),
+                  isExpanded: true,
+                  iconEnabledColor: AppColors.primaryColor,
+                  style: AppTextStyles.montStyle16m,
+                  items: [
+                    DropdownMenuItem(
+                      value: LanguageType.latin,
+                      child: Center(
+                        child: Text(
+                          'Lotin alifbosi',
+                          style: AppTextStyles.montStyle16m,
+                        ),
+                      ),
+                    ),
+                    DropdownMenuItem(
+                      value: LanguageType.kirill,
+                      child: Center(
+                        child: Text(
+                          'Кирилл алифбоси',
+                          style: AppTextStyles.montStyle16m,
+                        ),
+                      ),
+                    ),
+                  ],
+                  onChanged: (value) {
+                    setState(() {
+                      languageType = value;
+                      if (value == LanguageType.latin) {
+                        context.setLocale(const Locale('uz', 'latin'));
+                      } else {
+                        context.setLocale(const Locale('uz', 'cyrillic'));
+                      }
+                    });
+                  },
                 ),
-                value: languageType,
-                borderRadius: BorderRadius.circular(12),
-                isExpanded: true,
-                iconEnabledColor: AppColors.primaryColor,
-                style: AppTextStyles.montStyle16m,
-                items: [
-                  DropdownMenuItem(
-                    value: LanguageType.latin,
-                    child: Center(
-                      child: Text(
-                        'Lotin alifbosi',
-                        style: AppTextStyles.montStyle16m,
-                      ),
-                    ),
-                  ),
-                  DropdownMenuItem(
-                    value: LanguageType.kirill,
-                    child: Center(
-                      child: Text(
-                        'Кирилл алифбоси',
-                        style: AppTextStyles.montStyle16m,
-                      ),
-                    ),
-                  ),
-                ],
-                onChanged: (value) {
-                  setState(() {
-                    languageType = value;
-                    if (value == LanguageType.latin) {
-                      context.setLocale(const Locale('uz', 'latin'));
-                    } else {
-                      context.setLocale(const Locale('uz', 'cyrillic'));
-                    }
-                  });
-                },
               ),
               SizedBox(height: 242.h),
               EnterButton(
