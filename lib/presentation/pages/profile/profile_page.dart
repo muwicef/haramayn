@@ -4,21 +4,48 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:haramayn/core/provider/user_provider.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:haramayn/presentation/routes.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/constants/app_text_styles.dart';
 import '../../../core/constants/app_assets.dart';
 import '../../../core/constants/app_colors.dart';
 import 'components/data_richtext.dart';
 
-class ProfilePage extends StatelessWidget {
+String? finalPhone;
+String? finalPassword;
+
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
   final String pageTitle = 'profile-page';
+
+  Future getValidationData() async {
+    final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    var obtainedPhone = sharedPreferences.getString('phone');
+    var obtainedPassword = sharedPreferences.getString('password');
+    setState(() {
+      finalPhone = obtainedPhone;
+      finalPassword = obtainedPassword;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getValidationData().whenComplete(() => finalPhone == null ? Navigator.pushNamed(context, Routes.loginPage) : {});
+  }
 
   @override
   Widget build(BuildContext context) {
-    var data = context.read<UserProvider>();
+    var data = context.watch<UserProvider>();
+    data.loadData(finalPhone!, finalPassword!);
 
     return Padding(
       padding: const EdgeInsets.all(24),

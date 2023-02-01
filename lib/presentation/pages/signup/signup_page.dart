@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/constants/app_text_styles.dart';
 import '../../../core/provider/user_provider.dart';
@@ -78,32 +79,32 @@ class SignUpPage extends StatelessWidget {
                   ),
                   data
                       .registrate(
-                        nameController.text,
-                        phoneController.text,
-                        passwordController.text,
-                      )
+                    nameController.text,
+                    phoneController.text,
+                    passwordController.text,
+                  )
                       .then(
-                        (value) => {
-                          if (data.regStatusCode == 201)
-                            {
-                              data.loadData(phoneController.text, passwordController.text),
-                              Navigator.pushNamedAndRemoveUntil(
-                                context,
-                                Routes.mainPage,
-                                (_) => false,
-                              ),
-                            }
-                          else
-                            {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('Tizimdan ro\'yxatda o\'tishda xatolik bor'),
-                                ),
-                              ),
-                              Navigator.pop(context),
-                            }
-                        },
-                      ),
+                    (value) async {
+                      if (data.regStatusCode == 201) {
+                        data.loadData(phoneController.text, passwordController.text);
+                        Navigator.pushNamedAndRemoveUntil(
+                          context,
+                          Routes.mainPage,
+                          (_) => false,
+                        );
+                        final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+                        sharedPreferences.setString('phone', phoneController.text);
+                        sharedPreferences.setString('password', passwordController.text);
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Tizimdan ro\'yxatda o\'tishda xatolik bor'),
+                          ),
+                        );
+                        Navigator.pop(context);
+                      }
+                    },
+                  ),
                 },
               ),
               SizedBox(height: 21.h),

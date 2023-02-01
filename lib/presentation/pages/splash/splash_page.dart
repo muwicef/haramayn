@@ -8,7 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/constants/app_assets.dart';
 import '../../routes.dart';
 
-String? finalEmail;
+bool? isLangSelected = false;
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -20,9 +20,9 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   Future getValidationData() async {
     final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    var obtainedEmail = sharedPreferences.getString('phone');
+    var obtainedBool = sharedPreferences.getBool('langSelected');
     setState(() {
-      finalEmail = obtainedEmail;
+      isLangSelected = obtainedBool;
     });
   }
 
@@ -31,15 +31,15 @@ class _SplashPageState extends State<SplashPage> {
     getValidationData().whenComplete(() async {
       Future.delayed(
         const Duration(milliseconds: 1500),
-        () => finalEmail == null
+        () => isLangSelected == true
             ? Navigator.pushNamedAndRemoveUntil(
                 context,
-                Routes.welcomePage,
+                Routes.mainPage,
                 (_) => false,
               )
             : Navigator.pushNamedAndRemoveUntil(
                 context,
-                Routes.mainPage,
+                Routes.welcomePage,
                 (_) => false,
               ),
       );

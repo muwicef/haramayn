@@ -88,6 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                   );
                   final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
                   sharedPreferences.setString('phone', phoneController.text);
+                  sharedPreferences.setString('password', passwordController.text);
                   data.loadData(phoneController.text, passwordController.text).then((value) async => {
                         if (data.userData.error == false)
                           {
