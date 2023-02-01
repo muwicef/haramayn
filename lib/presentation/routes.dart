@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:haramayn/presentation/pages/books/all_blessings_page.dart';
+import 'package:haramayn/presentation/pages/books/all_guides_page.dart';
 
 import 'pages/select-lang/select_lang_page.dart';
 import 'pages/home/info_direction_page.dart';
@@ -16,6 +18,8 @@ class Routes {
   static const mainPage = '/mainPage';
   static const selectLangPage = '/selectLangPage';
   static const infoDirectionPage = 'infoDirectionPage';
+  static const allBlessingsPage = '/allBlessingsPage';
+  static const allGuidesPage = '/allGuidesPage';
 
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     try {
@@ -56,6 +60,16 @@ class Routes {
           return MaterialPageRoute(
             settings: routeSettings,
             builder: (_) => const InfoDirectionPage(),
+          );
+        case allBlessingsPage:
+          return MaterialPageRoute(
+            settings: routeSettings,
+            builder: (_) => const AllBlessingsPage(),
+          );
+        case allGuidesPage:
+          return MaterialPageRoute(
+            settings: routeSettings,
+            builder: (_) => const AllGuidesPage(),
           );
         default:
           return MaterialPageRoute(
