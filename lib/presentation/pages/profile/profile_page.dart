@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:provider/provider.dart';
+import 'package:haramayn/core/provider/user_provider.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/constants/app_text_styles.dart';
-import '../../../core/provider/user_provider.dart';
 import '../../../core/constants/app_assets.dart';
 import '../../../core/constants/app_colors.dart';
 import 'components/data_richtext.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
+
   final String pageTitle = 'profile-page';
 
   @override

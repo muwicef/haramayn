@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:haramayn/core/constants/app_colors.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/constants/app_text_styles.dart';
 import '../../../core/provider/user_provider.dart';
@@ -11,9 +13,14 @@ import '../../components/enter_button.dart';
 import '../../components/input_field.dart';
 import '../../routes.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     TextEditingController phoneController = TextEditingController();
@@ -68,16 +75,20 @@ class LoginPage extends StatelessWidget {
               const Spacer(),
               EnterButton(
                 title: 'login-page'.tr(gender: 'enter'),
-                onTap: () {
+                onTap: () async {
                   showDialog(
                     context: context,
                     builder: (context) {
-                      return const Center(
-                        child: CircularProgressIndicator.adaptive(backgroundColor: Colors.red),
+                      return Center(
+                        child: CircularProgressIndicator.adaptive(
+                          backgroundColor: AppColors.primaryColor,
+                        ),
                       );
                     },
                   );
-                  data.loadData(phoneController.text, passwordController.text).then((value) => {
+                  final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+                  sharedPreferences.setString('phone', phoneController.text);
+                  data.loadData(phoneController.text, passwordController.text).then((value) async => {
                         if (data.userData.error == false)
                           {
                             Navigator.pushNamedAndRemoveUntil(
@@ -91,6 +102,7 @@ class LoginPage extends StatelessWidget {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                 content: Text('Login yoki parol xato kiritildi'),
+                                duration: Duration(milliseconds: 700),
                               ),
                             ),
                             Navigator.pop(context),
