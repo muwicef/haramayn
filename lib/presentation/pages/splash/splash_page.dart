@@ -1,11 +1,8 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:haramayn/presentation/pages/splash/components/animated_logo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../core/constants/app_assets.dart';
 import '../../routes.dart';
 
 bool? isLangSelected = false;
@@ -30,7 +27,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     getValidationData().whenComplete(() async {
       Future.delayed(
-        const Duration(milliseconds: 1500),
+        const Duration(seconds: 2),
         () => isLangSelected == true
             ? Navigator.pushNamedAndRemoveUntil(
                 context,
@@ -49,16 +46,12 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.white,
       body: Center(
         child: Hero(
           tag: 'SplashHero',
-          child: Image.asset(
-            height: 119.5,
-            width: 174.w,
-            AppAssets.images.logo,
-          ),
+          child: AnimatedLogo(),
         ),
       ),
     );
