@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:haramayn/presentation/pages/splash/components/animated_logo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'components/animated_logo.dart';
 import '../../routes.dart';
 
 bool? isLangSelected = false;
