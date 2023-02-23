@@ -31,11 +31,11 @@ class InfoDirectionPage extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+        physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
         child: Column(
           children: [
-            SizedBox(height: 40.h),
             Text(
               'Toshkent-Madina',
               style: AppTextStyles.openStyle28b,
@@ -131,17 +131,17 @@ class InfoDirectionPage extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  '+998 (93) 990-90-90',
+                  '+998 (90) 369-80-08',
                   style: AppTextStyles.openStyle28b,
                 ),
                 const Spacer(),
                 InkWell(
-                    onTap: () => launchUrl(Uri.parse("tel:+998 93 990 90 90")),
+                    onTap: () => launchUrl(Uri.parse("tel:+998 90 369 80 08")),
                     child: SvgPicture.asset(AppAssets.icons.dialPhone)),
               ],
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 24),
+              padding: const EdgeInsets.fromLTRB(0, 4, 120, 4),
               child: Divider(
                 color: AppColors.primaryColor,
               ),
@@ -149,12 +149,12 @@ class InfoDirectionPage extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  '+998 (93) 990-90-90',
+                  '+998 (90) 163-41-22',
                   style: AppTextStyles.openStyle28b,
                 ),
                 const Spacer(),
                 InkWell(
-                    onTap: () => launchUrl(Uri.parse("tel:+998 93 990 90 90")),
+                    onTap: () => launchUrl(Uri.parse("tel:+998 90 163 41 22")),
                     child: SvgPicture.asset(AppAssets.icons.dialPhone)),
               ],
             ),
