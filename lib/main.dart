@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:haramayn/core/provider/all_guide_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'core/provider/pray_provider.dart';
@@ -20,6 +21,7 @@ void main() async {
       providers: [
         ChangeNotifierProvider(create: (context) => UserProvider()),
         ChangeNotifierProvider(create: (context) => PrayProvider()),
+        ChangeNotifierProvider(create: (context) => AllGuidesProvider()),
       ],
       child: EasyLocalization(
         supportedLocales: const [
@@ -38,7 +40,8 @@ class MyHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
     return super.createHttpClient(context)
-      ..badCertificateCallback = (X509Certificate cert, String host, int port) => true;
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }
 

@@ -26,7 +26,8 @@ class UserService {
     }
   }
 
-  static Future<int> registrate(String phone, String password, String name) async {
+  static Future<int> registrate(
+      String phone, String password, String name) async {
     const String baseUrl = "http://saidbots.ga/api/register";
     var map = <String, dynamic>{};
 

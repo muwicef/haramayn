@@ -86,29 +86,34 @@ class _LoginPageState extends State<LoginPage> {
                       );
                     },
                   );
-                  final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+                  final SharedPreferences sharedPreferences =
+                      await SharedPreferences.getInstance();
                   sharedPreferences.setString('phone', phoneController.text);
-                  sharedPreferences.setString('password', passwordController.text);
-                  data.loadData(phoneController.text, passwordController.text).then((value) async => {
-                        if (data.userData.error == false)
-                          {
-                            Navigator.pushNamedAndRemoveUntil(
-                              context,
-                              Routes.mainPage,
-                              (_) => false,
-                            )
-                          }
-                        else
-                          {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text('Login yoki parol xato kiritildi'),
-                                duration: Duration(milliseconds: 700),
-                              ),
-                            ),
-                            Navigator.pop(context),
-                          }
-                      });
+                  sharedPreferences.setString(
+                      'password', passwordController.text);
+                  data
+                      .loadData(phoneController.text, passwordController.text)
+                      .then((value) async => {
+                            if (data.userData.error == false)
+                              {
+                                Navigator.pushNamedAndRemoveUntil(
+                                  context,
+                                  Routes.mainPage,
+                                  (_) => false,
+                                )
+                              }
+                            else
+                              {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content:
+                                        Text('Login yoki parol xato kiritildi'),
+                                    duration: Duration(milliseconds: 700),
+                                  ),
+                                ),
+                                Navigator.pop(context),
+                              }
+                          });
                 },
               ),
               SizedBox(height: 21.h),
@@ -120,7 +125,8 @@ class _LoginPageState extends State<LoginPage> {
                     style: AppTextStyles.openStyle14r,
                   ),
                   InkWell(
-                    onTap: () => Navigator.pushNamed(context, Routes.signupPage),
+                    onTap: () =>
+                        Navigator.pushNamed(context, Routes.signupPage),
                     child: Text(
                       'login-page'.tr(gender: 'new-account'),
                       style: AppTextStyles.openStyle14s,
